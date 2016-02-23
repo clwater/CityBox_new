@@ -1,0 +1,61 @@
+<resources>
+
+    <string name="app_name">CityBox</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Setting</string>
+    <string name="title_activity_drawer">DrawerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="title_activity_main">CityBox</string>
+    <string name="action_feedback">Feedback</string>
+
+    <!-- drawable -->
+    <drawable name="selector_textview_normal">@color/drawer_footer_bg</drawable>
+    <drawable name="selector_textview_pressed">#ffc3c8c8</drawable>
+    <drawable name="selector_nav_item_pressed">#ffd7d7d7</drawable>
+
+    <string name="title_activity_login">Login</string>
+    <string name="string_canteen">Canteen</string>
+    <string name="string_book">Library</string>
+    <string name="string_grade">Achievement</string>
+    <string name="string_market">Market</string>
+    <string name="string_schedule">Curriculum</string>
+    <string name="string_school">News</string>
+    <string name="string_setting">Setting</string>
+    <string name="string_teacher">teacher select this!</string>
+    <string name="title_activity_setting">Setting</string>
+    <string name="title_activity_feedback">Feedback</string>
+
+    <string name="notify_priority">notify_priority</string>
+    <string name="title_activity_contain">Contain</string>
+    <string name="action_update_course">更新课表</string>
+    <string name="next_page">Next Page</string>
+    <string name="title_activity_book_detail">BookDetailActivity</string>
+    <string name="book_press">book_press</string>
+    <string name="book_call_number">call_number</string>
+    <string name="book_publish_date">publush_date</string>
+    <string name="avatar">avatar</string>
+    <string name="background">background</string>
+    <string name="contributer">作者</string>
+
+    <!-- 成绩item -->
+    <string name="course_name">课程名:</string>
+    <string name="course_id">课程编号:</string>
+    <string name="test_way">考核方式:</string>
+    <string name="course_type">课程类型:</string>
+    <string name="course_hour">学时:</string>
+    <string name="course_score">学分:</string>
+    <string name="normal_score">平时成绩</string>
+    <string name="final_score">期末成绩</string>
+    <string name="average_score">平均成绩</string>
+    <string name="default_score">0</string>
+    <string name="price">price</string>
+    <string name="update_canteen">Update Data</string>
+    <string name="exit">exit</string>
+    <string name="feedback_hint">Tell us your suggestions</string>
+    <string name="update">update</string>
+    <string name="activity_login_id">学号</string>
+    <string name="activity_login_pw">密码</string>
+    <string name="activity_login_login">登录</string>
+</resources>

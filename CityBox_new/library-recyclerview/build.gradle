@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 'Google Inc.:Google APIs:21'
+    buildToolsVersion '21.1.2'
+
+
+    defaultConfig {
+        minSdkVersion 16
+        targetSdkVersion 21
+
+        versionCode 1
+        versionName "1.0"
+    }
+}
+
+dependencies {
+    compile project(':library')
+    compile files('android-support-v7-recyclerview.jar')
+    compile files('android-support-v4.jar')
+}
+

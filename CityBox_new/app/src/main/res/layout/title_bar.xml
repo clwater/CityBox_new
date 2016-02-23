@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/citybox_blue"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:paddingTop="3dp"
+        android:paddingBottom="3dp"
+        android:id="@+id/titleTv"
+        android:layout_width="0dp"
+        android:layout_weight="5"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/updatatv"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="更新数据"
+        android:layout_marginRight="3dp"
+        android:textColor="#fff"
+        android:layout_weight="1"/>
+
+</LinearLayout> 
