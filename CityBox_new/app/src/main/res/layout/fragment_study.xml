@@ -2,15 +2,68 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    >
 
     <include layout="@layout/title_bar" />
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:gravity="center"
-        android:text="3"
-        android:textColor="#000000" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:layout_margin="2dp"
+            android:drawableTop="@drawable/ic_restaurant"
+            android:id="@+id/study_score"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="成绩查询"
+            android:textSize="20dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center"
+            android:background="#fff"/>
+
+
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:id="@+id/study_book"
+            android:drawableTop="@drawable/ic_book"
+            android:text="图书馆"
+            android:textSize="20dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:gravity="center"
+            android:background="#fff"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:textColor="#1c128c"
+            android:textSize="16dp"
+            android:text="更多生活服务正在开发中,敬请期待."/>
+
+    </LinearLayout>
+
+
+
 
 </LinearLayout>
