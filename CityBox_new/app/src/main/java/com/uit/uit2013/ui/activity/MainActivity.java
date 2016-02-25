@@ -25,6 +25,7 @@ import com.uit.uit2013.R;
 import com.uit.uit2013.utils.PreferenceTool;
 import com.uit.uit2013.utils.db.OrderDateHelp;
 import com.uit.uit2013.utils.db.ResDateHelp;
+import com.uit.uit2013.utils.db.ScheduleDateCtrl;
 import com.uit.uit2013.utils.db.ScheduleDateHelp;
 import com.umeng.analytics.MobclickAgent;
 
@@ -120,6 +121,21 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 + "orderstatu  text "
                 +")";
         db.execSQL(order);
+
+
+
+//        String schedule = "create table schedule ("
+//                + "class_name text , "
+//                + "classroom text ,"
+//                + "weeks text ,"
+//                + "colors text ,"
+//                + "INDEX_W text ,"
+//                + "INDEX_T text "
+//                +")";
+//
+//        db.execSQL(schedule);
+
+        //ScheduleDateCtrl.createSQL(this);
 
 
     }

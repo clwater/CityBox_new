@@ -26,8 +26,6 @@ public class ScheduleAnalysis {
         JSONTokener jsonParser = new JSONTokener(rquest);
         JSONObject person = (JSONObject) jsonParser.nextValue();
         String status = person.getString("status");
-
-        //Log.d("=-=" , status);
         if (status.equals("ok")) {
             return true;
         }else {
@@ -40,7 +38,7 @@ public class ScheduleAnalysis {
         ScheduleDateCtrl.createSQL(context);
 
         for (int i = 0 ; i < 10 ; i++){
-            cs[i] = new String();
+            cs[i%10] = new String();
         }
 
         String sql;
@@ -99,7 +97,6 @@ public class ScheduleAnalysis {
         }
 
 
-        //ScheduleDateCtrl.QuerySchedule();
     }
 
     public static String setColor(String class_name) {
@@ -116,8 +113,8 @@ public class ScheduleAnalysis {
         }
 
         if (pd){
-            cs[index] = class_name;
-            c = s[ index ];
+            cs[index % 10] = class_name;
+            c = s[ index % 10];
             index++;
         }else{
             c = s[ in ];

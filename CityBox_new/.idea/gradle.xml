@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/library-recyclerview" />
+            <option value="$PROJECT_DIR$/librarybutton" />
           </set>
         </option>
         <option name="myModules">
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/library" />
             <option value="$PROJECT_DIR$/library-recyclerview" />
+            <option value="$PROJECT_DIR$/librarybutton" />
           </set>
         </option>
       </GradleProjectSettings>

@@ -24,6 +24,7 @@ public class BetweenData {
         NowCa.set(year,mouth,day);
         long NowN = NowCa.getTimeInMillis();
         bd = Math.abs( (BaseN - NowN) / 24 / 3600000 );
+
         return (int)bd;
     }
 

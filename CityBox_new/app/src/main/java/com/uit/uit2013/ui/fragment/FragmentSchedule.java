@@ -3,6 +3,7 @@ package com.uit.uit2013.ui.fragment;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -33,7 +34,9 @@ import com.uit.uit2013.R;
 import com.uit.uit2013.model.KeBiao;
 import com.uit.uit2013.model.Schedule;
 import com.uit.uit2013.model.User;
+import com.uit.uit2013.ui.activity.LoginActivity;
 import com.uit.uit2013.utils.BetweenData;
+import com.uit.uit2013.utils.PreferenceTool;
 import com.uit.uit2013.utils.analysis.ScheduleAnalysis;
 
 import org.json.JSONException;
@@ -78,7 +81,14 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
         genScreen();        //获取屏幕大小
         oncreate();         //实例化组建
         getData();          //获取日期信息
-        getSchedule();      //获取课表
+
+        PreferenceTool pt = new PreferenceTool(activity);
+
+
+        getSchedule();
+
+
+            //获取课表
 
 
         return view;
@@ -149,6 +159,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
         super.onActivityCreated(savedInstanceState);
         tv = (TextView) getView().findViewById(R.id.titleTv);
         updatatv = (TextView)getView().findViewById(R.id.updatatv);
+        updatatv.setText("更新数据");
         updatatv.setOnClickListener(this);
         tv.setText("课表");
     }
@@ -402,8 +413,6 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
 
 
 
-
-
     private void changeDayWidth(int _day) {
         //组建宽度变化
         for(int  i = 0 ; i < 7 ; i++){
@@ -427,8 +436,5 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
             }
         }
     }
-
-
-
 
 }

@@ -37,7 +37,7 @@ public class ScheduleDateCtrl {
 
     }
     public  static  void delete(Context context){
-        String sql=" DROP TABLE IF EXISTS schedule";
+        String sql=" delete from schedule";
         db.execSQL(sql);
     }
     //查询课表信息

@@ -17,16 +17,23 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/score_spinner"
-            android:layout_weight="5"></Spinner>
+            android:layout_weight="1"></Spinner>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/score_update"
             android:text="查询课表"
+            android:textColor="#fff"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="5dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_score_update"
             android:gravity="center"
             android:textSize="20sp"
-            android:layout_weight="3"/>
+            />
     </LinearLayout>
 
 
@@ -37,8 +44,8 @@
         android:id="@+id/score_listview"
         android:paddingTop="6dp"
         android:dividerHeight="10dip"
-        android:background="#d5f2e2"
-        android:divider="#d5f2e2"
+        android:background="#ECECEC"
+        android:divider="#ECECEC"
         android:scrollbars="none"
         android:layout_height="fill_parent"/>
 

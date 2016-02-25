@@ -22,7 +22,7 @@
         android:id="@+id/updatatv"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="更新数据"
+        android:text=""
         android:layout_marginRight="3dp"
         android:textColor="#fff"
         android:layout_weight="1"/>

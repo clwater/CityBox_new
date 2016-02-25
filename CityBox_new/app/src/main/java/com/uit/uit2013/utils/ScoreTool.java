@@ -19,12 +19,14 @@ public class ScoreTool {
         SCORE_W = context.getSharedPreferences("score" , context.MODE_PRIVATE).edit();
     }
 
-    public static void  setPreferenceTool(String id , String trem){
-        SCORE_W.putString("trem" , trem);
+    public static void  setPreferenceTool(String id ,String position, String trem){
+        String t = "trem" + id + position;
+        SCORE_W.putString(t , trem);
         SCORE_W.commit();
     }
-    public static String getTrem(){
-        return SCORE_G.getString("trem" , "");
+    public static String getTrem(String id ,String position, String trem){
+        String t = "trem" + id + position;
+        return SCORE_G.getString(t , "null");
     }
 
 
