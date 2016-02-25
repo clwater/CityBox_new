@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/border_item_score"
+    android:layout_margin="1dip"
+    >
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="5"
+        android:padding="3dp"
+        android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:gravity="center"
+                android:text="课程名"
+                android:textColor="#4778a9"
+                android:id="@+id/item_score_name"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:gravity="left"
+                android:textSize="20sp"
+                android:text="课程成绩"
+                android:textColor="#f71818"
+                android:id="@+id/item_score_k"
+                />
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="5dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:textSize="16sp"
+                android:text="平时成绩"
+                android:gravity="left"
+                android:id="@+id/item_score_p"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="16sp"
+                android:text="期末成绩"
+                android:gravity="left"
+                android:id="@+id/item_score_q"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="16sp"
+                android:text="学分"
+                android:gravity="center"
+                android:id="@+id/item_score_x"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
