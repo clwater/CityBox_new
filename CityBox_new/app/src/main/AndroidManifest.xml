@@ -67,6 +67,7 @@
         <activity android:name=".ui.activity.LifeAcceptActivity"/>
         <activity android:name=".ui.activity.MyOrderActivity"/>
         <activity android:name=".ui.activity.ScoreActivity"/>
+        <activity android:name=".ui.activity.BookActivity"/>
 
 
 

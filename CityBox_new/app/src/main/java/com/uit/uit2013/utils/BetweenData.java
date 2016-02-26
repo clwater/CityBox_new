@@ -3,6 +3,7 @@ package com.uit.uit2013.utils;
 import android.util.Log;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * Created by yszsyf on 16/1/27.
@@ -39,10 +40,23 @@ public class BetweenData {
 
     public static int  getDayOfWeekNumber(int year , int mouth , int day){
         //当前周几
-        int dayofweek_number = 0 ;
-        int db = (int) getBetweenDate(year , mouth , day);
-        dayofweek_number = db % 7;
-        return dayofweek_number;
+//        int dayofweek_number = 0 ;
+//        int db = (int) getBetweenDate(year , mouth , day);
+//        dayofweek_number = db % 7;
+
+        Date today = new Date();
+        Calendar c=Calendar.getInstance();
+        c.setTime(today);
+        int weekday=c.get(Calendar.DAY_OF_WEEK);
+
+        if (weekday == 0){
+            weekday = 6;
+        }else {
+            weekday--;
+        }
+
+        Log.d("kebiao" , "weekday:" + weekday);
+        return weekday;
     }
 
 }

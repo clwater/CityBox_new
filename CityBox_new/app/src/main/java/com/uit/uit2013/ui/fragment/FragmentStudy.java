@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.uit.uit2013.R;
+import com.uit.uit2013.ui.activity.BookActivity;
 import com.uit.uit2013.ui.activity.ScoreActivity;
 
 /**
@@ -56,7 +57,7 @@ public class FragmentStudy extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()){
             case  R.id.study_book:
-
+                startActivity(new Intent(activity , BookActivity.class));
 
                 break;
             case  R.id.study_score:

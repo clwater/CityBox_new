@@ -140,7 +140,7 @@ public class ScoreActivity  extends Activity implements AdapterView.OnItemSelect
     }
 
     private void queryscore() throws IOException {
-        pr = ProgressDialog.show(activity, null, "获取可用订单中");
+        pr = ProgressDialog.show(activity, null, "获取成绩中");
         GetScoreTask task=new GetScoreTask();
         task.execute();
 
