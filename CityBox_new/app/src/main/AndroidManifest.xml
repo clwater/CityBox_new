@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
 
 
+
     <!-- Required -->
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -33,7 +34,22 @@
         android:theme="@style/AppTheme">
 
         <meta-data android:value="5698d64167e58ef640000085" android:name="UMENG_APPKEY"></meta-data>
-        <meta-data android:value="fir" android:name="UMENG_CHANNEL"/>
+        <meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
+        <service
+            android:name="com.umeng.update.net.DownloadingService"
+            android:process=":DownloadingService" >
+        </service>
+        <activity
+            android:name="com.umeng.update.UpdateDialogActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+        </activity>
+
+
+
+
+
+
+
 
 
         <!-- 设置环信应用的appkey -->
@@ -68,6 +84,7 @@
         <activity android:name=".ui.activity.MyOrderActivity"/>
         <activity android:name=".ui.activity.ScoreActivity"/>
         <activity android:name=".ui.activity.BookActivity"/>
+
 
 
 

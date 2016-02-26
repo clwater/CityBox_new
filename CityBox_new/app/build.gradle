@@ -8,8 +8,8 @@ android {
         applicationId "uit2013.uit.com.citybox"
         minSdkVersion 16
         targetSdkVersion 21
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "3.0"
     }
     buildTypes {
         release {
@@ -26,4 +26,6 @@ dependencies {
     compile project(':library-recyclerview')
     compile project(':library')
     compile files('libs/easemobchat_2.2.5.jar')
+    compile files('libs/umeng-update-v2.6.0.1.jar')
+
 }

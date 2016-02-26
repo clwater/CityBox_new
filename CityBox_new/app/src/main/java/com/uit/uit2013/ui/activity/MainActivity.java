@@ -1,6 +1,7 @@
 package com.uit.uit2013.ui.activity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,6 +29,10 @@ import com.uit.uit2013.utils.db.ResDateHelp;
 import com.uit.uit2013.utils.db.ScheduleDateCtrl;
 import com.uit.uit2013.utils.db.ScheduleDateHelp;
 import com.umeng.analytics.MobclickAgent;
+import com.umeng.update.UmengUpdateAgent;
+import com.umeng.update.UmengUpdateListener;
+import com.umeng.update.UpdateResponse;
+import com.umeng.update.UpdateStatus;
 
 
 public class MainActivity extends FragmentActivity implements View.OnClickListener {
@@ -46,8 +51,21 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        final Activity activity = this;
+
+       //FeedbackAgent agent = new FeedbackAgent(this);
+        //agent.startFeedbackActivity();
+
+
+        UmengUpdateAgent.update(this);
+
+
+
+
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
+
 
         app_statu = markapp();//判断是否第一次打开应用
 

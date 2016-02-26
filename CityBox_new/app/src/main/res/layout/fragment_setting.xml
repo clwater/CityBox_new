@@ -2,14 +2,139 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:background="#fff"
+    android:orientation="vertical">
 
     <include layout="@layout/title_bar" />
 
-    <Button
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:layout_marginTop="12sp"
+        android:text="帮助"
+        android:textColor="#42b44f"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="版本"
+        android:paddingLeft="4dp"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="V"
+        android:paddingLeft="8dp"
+        android:textSize="12sp"
+        android:textColor="#b7b7b9"
+        android:id="@+id/setting_version"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="手动更新"
+        android:paddingLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
+        android:id="@+id/setting_update"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="关于我们"
+        android:paddingLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
+        android:id="@+id/setting_about"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="4dp"
+        android:layout_marginTop="12sp"
+        android:text="感谢你们"
+        android:textColor="#42b44f"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="作者"
+        android:paddingLeft="4dp"
+        android:textSize="16sp"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="uit 2012 &amp; uit 2013"
+        android:paddingLeft="8dp"
+        android:textSize="12sp"
+        android:textColor="#b7b7b9"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="退出登陆"
+        android:paddingLeft="4dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="12dp"
+        android:textSize="16sp"
         android:id="@+id/setting_esc"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginBottom="4dp"
+        android:layout_marginTop="4dp"
+        android:background="#D4D4D4"/>
+
+
 
 </LinearLayout>
