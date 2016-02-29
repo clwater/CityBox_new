@@ -87,6 +87,18 @@
 
 
 
+        <receiver android:name=".ui.Widget.ScheduleWidgetProvider" >
+            <intent-filter >
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="com.uit.uit2013.ScheduleWidget" />
+                <action android:name="com.uit.uit2013.ScheduleWidget_Next"/>
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_schedule" />
+        </receiver>
+
 
     </application>
 

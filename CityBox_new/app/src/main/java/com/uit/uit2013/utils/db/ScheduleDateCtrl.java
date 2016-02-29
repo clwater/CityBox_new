@@ -37,6 +37,7 @@ public class ScheduleDateCtrl {
 
     }
     public  static  void delete(Context context){
+        createSQL(context);
         String sql=" delete from schedule";
         db.execSQL(sql);
     }

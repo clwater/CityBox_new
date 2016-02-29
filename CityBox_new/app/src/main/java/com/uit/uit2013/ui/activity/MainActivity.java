@@ -70,6 +70,16 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 startActivity(new Intent( this , LoginActivity.class));
          }
 
+        Context mcontext = null;
+        Intent intent = null;
+
+        //新建一个要发送的Intent
+        mcontext = this;
+        intent = new Intent();
+        intent.setAction("com.uit.uit2013.ScheduleWidget");
+        //发送广播(由onReceive来接收)
+        mcontext.sendBroadcast(intent);
+
         gestureDetector = new GestureDetector(MainActivity.this,onGestureListener);//滑动监听
 
 

@@ -38,6 +38,7 @@ import com.uit.uit2013.ui.activity.LoginActivity;
 import com.uit.uit2013.utils.BetweenData;
 import com.uit.uit2013.utils.PreferenceTool;
 import com.uit.uit2013.utils.analysis.ScheduleAnalysis;
+import com.uit.uit2013.utils.db.ScheduleDateCtrl;
 
 import org.json.JSONException;
 
@@ -100,6 +101,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
         now_week = BetweenData.getWeekNumber(getData_year , getData_mouth + 1 ,getData_day);    //获取周数
         if (now_week < 0){
             Toast.makeText(activity , "现在还没有开学,默认显示第一周的课表." , Toast.LENGTH_LONG).show();
+            ScheduleDateCtrl.delete(activity);
             now_week = 0 ;
         }
 
