@@ -23,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.uit.uit2013.R;
+import com.uit.uit2013.ui.fragment.FragmentSchedule;
 import com.uit.uit2013.utils.PreferenceTool;
 import com.uit.uit2013.utils.db.OrderDateHelp;
 import com.uit.uit2013.utils.db.ResDateHelp;
@@ -53,7 +54,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         final Activity activity = this;
 
-
+        //UmengUpdateAgent.update(this);
         UmengUpdateAgent.update(this);//友盟更新
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -68,12 +69,13 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
            if(!login_statu){
                 this.finish();
                 startActivity(new Intent( this , LoginActivity.class));
-         }
+               FragmentSchedule.loginpd = false;
+         }else {
+               FragmentSchedule.loginpd = true;
+           }
 
         Context mcontext = null;
         Intent intent = null;
-
-        //新建一个要发送的Intent
         mcontext = this;
         intent = new Intent();
         intent.setAction("com.uit.uit2013.ScheduleWidget");

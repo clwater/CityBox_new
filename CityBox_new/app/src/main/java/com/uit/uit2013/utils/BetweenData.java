@@ -26,16 +26,28 @@ public class BetweenData {
         long NowN = NowCa.getTimeInMillis();
         bd = (NowN - BaseN) / 24 / 3600000 ;
 
+        Log.d("datedate" , "bd:  " + bd);
+
         return (int)bd;
     }
 
     public static int  getWeekNumber(int year , int mouth , int day){
         //当前第几周
+
+
         int week_number = 0 ;
         int bd = (int ) getBetweenDate(year , mouth , day);
-        week_number  = bd / 7 ;
 
-        return week_number;
+        if (bd < 0){
+            return -1;
+        }else {
+            week_number  = bd / 7 ;
+
+            return week_number;
+        }
+
+
+
     }
 
     public static int  getDayOfWeekNumber(int year , int mouth , int day){

@@ -71,6 +71,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
     private int choose_week = 0 , now_week = 0;
     Context context;
     Vector<KeBiao>  schedule;
+    public static Boolean loginpd = false;
 
 
     @Override
@@ -99,8 +100,12 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
         int getData_mouth = c.get(Calendar.MONTH);
         int getData_day = c.get(Calendar.DATE);
         now_week = BetweenData.getWeekNumber(getData_year , getData_mouth + 1 ,getData_day);    //获取周数
+
+        Log.d("datedate" , "now_week : " + now_week);
         if (now_week < 0){
-            Toast.makeText(activity , "现在还没有开学,默认显示第一周的课表." , Toast.LENGTH_LONG).show();
+            if (loginpd == true) {
+                Toast.makeText(activity, "现在还没有开学,默认显示第一周的课表.", Toast.LENGTH_SHORT).show();
+            }
             ScheduleDateCtrl.delete(activity);
             now_week = 0 ;
         }
