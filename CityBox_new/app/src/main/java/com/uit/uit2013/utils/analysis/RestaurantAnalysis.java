@@ -18,12 +18,11 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/1/31.
+ * 食堂信息解析
  */
 public class RestaurantAnalysis {
     public static Vector<Restaurant> AnalysisRes(String result , Context context)  {
         Vector<Restaurant> res = new Vector<Restaurant>();
-      //  ResDateCtrl.delete(context);
-       // ResDateCtrl.createSQL(context);
 
         JSONTokener jsonParser = new JSONTokener(result);
         JSONObject jsonObject = null;

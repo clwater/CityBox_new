@@ -18,7 +18,7 @@
             android:id="@+id/itme_dk_name"
             android:gravity="center"
             android:textColor="#062c5e"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:text="item_dangkou_name"
             android:singleLine="true"
             android:ellipsize="marquee"
@@ -32,7 +32,6 @@
             android:layout_height="match_parent"
             android:id="@+id/itme_dk_price"
             android:gravity="right"
-            android:textSize="16dp"
             android:text="item_res_body"
             android:textColor="#ff0400"
             android:paddingRight="20dp"/>
@@ -42,7 +41,7 @@
     <LinearLayout
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
+        android:layout_weight="0.8"
         android:orientation="horizontal"
         android:padding="1dp">
 
@@ -61,7 +60,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textSize="28sp"
+            android:textSize="20sp"
             android:id="@+id/item_dk_number"
             android:layout_weight="2"/>
 

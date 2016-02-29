@@ -3,47 +3,62 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@drawable/appbackground"
 >
 
     <include layout="@layout/title_bar" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="horizontal"
         >
 
         <TextView
-            android:layout_margin="2dp"
-            android:drawableTop="@drawable/ic_restaurant"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:drawableTop="@drawable/icon_order"
             android:id="@+id/life_restaurant"
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:text="订餐"
-            android:textSize="20dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:textSize="16dp"
+            android:minHeight="100dp"
+            android:minWidth="100dp"
             android:gravity="center"
-            android:background="#fff"/>
+            android:padding="8dp"
+            android:background="@drawable/button_back_life"
+
+           />
 
 
 
         <TextView
-            android:layout_width="0dp"
-            android:layout_weight="1"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:id="@+id/life_accept"
-            android:drawableTop="@drawable/ic_songcan"
+            android:drawableTop="@drawable/icon_accept"
             android:text="送餐"
-            android:textSize="20dp"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
+            android:textSize="16dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:gravity="center"
-            android:background="#fff"/>
+            android:minHeight="100dp"
+            android:minWidth="100dp"
+            android:padding="8dp"
+            android:background="@drawable/button_back_life"
+            />
+
 
     </LinearLayout>
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"

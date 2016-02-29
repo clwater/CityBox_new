@@ -28,6 +28,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/1/30.
+ * 食堂信息
  */
 public class LifeRestauranActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private TextView life_title , back , life_updata , life_history;
@@ -55,7 +56,7 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
         life_res_listview.setTransitionEffect( new HelixEffect());
 
        try {
-           res = ResDateCtrl.QueryRes(this);
+           res = ResDateCtrl.QueryRes(this);        //读取本地信息
        }catch (Exception exceptione){}
 
         data = getData();

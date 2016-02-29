@@ -3,6 +3,7 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="@drawable/appbackground"
     >
 
     <include layout="@layout/title_bar_life"/>
@@ -11,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         android:id="@+id/life_res_listview"
-        android:background="#eaeaef">
+        >
 
     </com.twotoasters.jazzylistview.JazzyListView>
 

@@ -48,6 +48,7 @@ import java.util.Vector;
 
 /**
  * Created by soul on 2016/1/19.
+ * 课表 由于自己写的=-=课表显示  有点多
  */
 public class FragmentSchedule extends Fragment implements View.OnClickListener {
     private TextView tv,updatatv;
@@ -84,10 +85,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
 
         PreferenceTool pt = new PreferenceTool(activity);
 
-
         getSchedule();
-
-
             //获取课表
 
 
@@ -100,6 +98,11 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
         int getData_mouth = c.get(Calendar.MONTH);
         int getData_day = c.get(Calendar.DATE);
         now_week = BetweenData.getWeekNumber(getData_year , getData_mouth + 1 ,getData_day);    //获取周数
+        if (now_week < 0){
+            Toast.makeText(activity , "现在还没有开学,默认显示第一周的课表." , Toast.LENGTH_LONG).show();
+            now_week = 0 ;
+        }
+
         Log.d("-=" , "now_week:" + now_week);
         choose_week = now_week ;
         changeDayWidth(BetweenData.getDayOfWeekNumber(getData_year , getData_mouth + 1 ,getData_day) - 1 ); //获取周几
@@ -132,16 +135,12 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
                                 classtext += kb.getClass_name() + "@"  + kb.getClassroom();
                                 day_t[i][j].setText(classtext);
                                 day_t[i][j].setBackgroundColor(Color.parseColor(kb.getColors()));
-
                             }
                         }
-
                     }
                  }
-
             }
         }
-
     }
 
     private void cleardrawSchedule() {
@@ -149,7 +148,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
         for (int i = 0 ; i < 7 ; i++){
             for (int j = 0 ; j < 6 ; j++){
                 day_t[i][j].setText("");
-                day_t[i][j].setBackgroundColor(Color.parseColor("#ffffff"));
+                day_t[i][j].setBackgroundColor((Color.argb(120, 255, 255, 255)));
             }
         }
     }
@@ -254,6 +253,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
 
 
     private void genScreen() {
+        //获取屏幕大小
         WindowManager windowManager = activity.getWindowManager();
         Display display = windowManager.getDefaultDisplay();
         screenWidth  = display.getWidth();
@@ -263,6 +263,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
 
 
     private void oncreate() {
+        //实例化
         bian = new TextView[12];
         bian[0] = (TextView) view.findViewById(R.id.bian_0);
         bian[1] = (TextView) view.findViewById(R.id.bian_1);

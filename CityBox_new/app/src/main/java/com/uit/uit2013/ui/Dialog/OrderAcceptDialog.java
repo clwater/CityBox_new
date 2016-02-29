@@ -18,6 +18,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/17.
+ * 抢单时显示的dailog
  */
 public class OrderAcceptDialog extends Dialog implements View.OnClickListener {
 

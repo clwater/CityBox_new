@@ -21,6 +21,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/18.
+ * 历史订单的adapter
  */
 public class OrderHistoryAdapter extends BaseAdapter {
     private List<Map<String, Object>> data;

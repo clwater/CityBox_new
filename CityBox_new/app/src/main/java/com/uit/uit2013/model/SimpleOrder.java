@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/2/15.
+ * 简略订单  用于选择
  */
 public class SimpleOrder {
     String name;

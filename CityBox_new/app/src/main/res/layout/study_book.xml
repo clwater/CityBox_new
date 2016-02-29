@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/appbackground">
 
     <include layout="@layout/title_bar" />
 
@@ -10,36 +11,28 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="4dp"
-        android:background="#d6d4e1"
+
         >
 
         <EditText
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/book_input"
-            android:gravity="center"
+            android:gravity="left"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
             android:layout_gravity="center"
-            android:paddingLeft="10dp"
+            android:paddingLeft="15dp"
             android:hint="请输入你要查询的图书信息"
-            android:background="@null"
+
             android:layout_weight="1"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/book_update"
-            android:text="搜索"
-            android:textColor="#fff"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:layout_marginRight="5dp"
-            android:layout_gravity="center"
-            android:background="@drawable/button_score_update"
+            android:background="@drawable/button_book_query"
             android:gravity="center"
-            android:textSize="24sp"
             />
     </LinearLayout>
 
@@ -51,9 +44,8 @@
         android:id="@+id/book_listview"
         android:paddingTop="6dp"
         android:dividerHeight="10dip"
-        android:background="#ECECEC"
-        android:divider="#ECECEC"
         android:scrollbars="none"
+        android:divider="#00ececec"
         android:layout_height="fill_parent"/>
 
 

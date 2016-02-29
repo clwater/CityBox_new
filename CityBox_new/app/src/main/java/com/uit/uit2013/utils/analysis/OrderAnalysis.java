@@ -12,6 +12,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/16.
+ * 订单解析
  */
 public class OrderAnalysis {
     public static AllOrder orderanalysis(String result) throws JSONException {

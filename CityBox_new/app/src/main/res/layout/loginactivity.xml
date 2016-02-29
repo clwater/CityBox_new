@@ -20,19 +20,19 @@
         <TextView
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:background="@drawable/android_icon_small"
+            android:background="@drawable/icon"
             android:layout_gravity="center"
             android:gravity="center"
             />
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.6"
+            android:layout_height="wrap_content"
             android:text="城院盒子"
             android:gravity="center"
+            android:paddingTop="10dp"
             android:textColor="#fffafffb"
-            android:textSize="25sp"
+            android:textSize="24sp"
 
             />
         <TextView

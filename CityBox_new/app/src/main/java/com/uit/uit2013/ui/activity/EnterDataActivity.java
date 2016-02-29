@@ -15,6 +15,7 @@ import com.uit.uit2013.R;
 
 /**
  * Created by yszsyf on 16/2/16.
+ * 确认订单的时候 设置相关数据
  */
 public class EnterDataActivity extends Activity implements View.OnClickListener {
 
@@ -35,6 +36,8 @@ public class EnterDataActivity extends Activity implements View.OnClickListener 
     private void setstatu() {
 
         intent = getIntent();
+        //通过intent穿值 判断什么类型的数据
+
         title  = intent.getStringExtra("name");
         text = intent.getStringExtra("text");
         remark = intent.getStringExtra("remark");
@@ -46,6 +49,7 @@ public class EnterDataActivity extends Activity implements View.OnClickListener 
         if(title.equals("打赏") || title.equals("联系方式")){
             change_text.setKeyListener(new
                     DigitsKeyListener(false,true));
+            //如果是打赏或者联系方式的话只能输入数字
         }
 
 
@@ -78,7 +82,7 @@ public class EnterDataActivity extends Activity implements View.OnClickListener 
     private void changefinish() {
             intent.putExtra("returnname" ,title);
             intent.putExtra("returntext" ,change_text.getText().toString());
-            this.setResult(1,intent);
+            this.setResult(1,intent);           //
             this.finish();
 
 

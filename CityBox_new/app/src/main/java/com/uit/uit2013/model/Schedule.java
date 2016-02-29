@@ -8,6 +8,7 @@ import java.util.Vector;
 
 /**
  * Created by soul on 2016/1/20.
+ * 课表类 整体
  */
 public class Schedule {
     public  static Vector<KeBiao> schedule = null;

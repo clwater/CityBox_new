@@ -11,6 +11,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/17.
+ * 解析多个订单同时返回的时候
  */
 public class ComplexOrderAnalysis {
     public static Vector<String>  ComplexOrder(String result) throws JSONException {

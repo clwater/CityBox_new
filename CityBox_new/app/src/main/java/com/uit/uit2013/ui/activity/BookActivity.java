@@ -33,6 +33,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/26.
+ * 图书查询
  */
 public class BookActivity  extends Activity implements View.OnClickListener {
     private Activity activity;
@@ -52,27 +53,16 @@ public class BookActivity  extends Activity implements View.OnClickListener {
         setContentView(R.layout.study_book);
         activity = this;
 
-        createtitle();
-//        createspinner();
-//        createlist();
-        create();
+        createtitle();   //标题
+        create();          //内容
     }
 
     private void create() {
         book_input = (EditText) findViewById(R.id.book_input);
         book_update = (TextView)findViewById(R.id.book_update);
         book_update.setOnClickListener(this);
-        book_listview  = (JazzyListView) findViewById(R.id.book_listview);
-
-
-        book_listview.setTransitionEffect( new GrowEffect());
-
-
-//            data = getData();
-//            adapter_list = new SimpleAdapter(this, data, R.layout.item_score,
-//                    new String[]{"name", "k", "p", "q", "x"},
-//                    new int[]{R.id.item_score_name, R.id.item_score_k, R.id.item_score_p, R.id.item_score_q, R.id.item_score_x});
-//            score_listview.setAdapter(adapter_list);
+        book_listview  = (JazzyListView) findViewById(R.id.book_listview);      //jazzylist为第三方库
+        book_listview.setTransitionEffect( new GrowEffect());                   //滑动效果
 
     }
 
@@ -97,8 +87,8 @@ public class BookActivity  extends Activity implements View.OnClickListener {
     private void querybook() {
         bookname = book_input.getText().toString().trim();
 
-        pr = ProgressDialog.show(activity, null, "获取成绩中");
-        BookTask task=new BookTask();
+        pr = ProgressDialog.show(activity, null, "正在查找相关图书信息");
+        BookTask task=new BookTask();       //异步
         task.execute();
     }
 
@@ -106,7 +96,7 @@ public class BookActivity  extends Activity implements View.OnClickListener {
         String resultweb = "";
         protected Void doInBackground(Void... params) {
 
-                resultweb = BookNetWork.Book(bookname);
+                resultweb = BookNetWork.Book(bookname);         //得到查询结果
 
             return null;
         }
@@ -125,7 +115,7 @@ public class BookActivity  extends Activity implements View.OnClickListener {
             resultweb = "{\"books\":[]}";
         }
 
-        book_all = BookAnalysis.AnalysisBook(resultweb);
+        book_all = BookAnalysis.AnalysisBook(resultweb);            //解析得到的数据
         setbook();
 
         Log.d("book" , "result: " + resultweb);
@@ -133,6 +123,7 @@ public class BookActivity  extends Activity implements View.OnClickListener {
     }
 
     private void setbook() {
+        //不知道为什么  adapter_list.notifyDataSetChanged();  方法不好用 =-=  只能用这样的方法
 
         data = getData();
         adapter_list = new SimpleAdapter(this, data, R.layout.item_book,

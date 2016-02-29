@@ -10,8 +10,8 @@ import java.util.Date;
  * 日期相关工具类
  */
 public class BetweenData {
-    public static int BaseYear = 2015;
-    public static int BaseMouth = 9;
+    public static int BaseYear = 2016;
+    public static int BaseMouth = 3;
     public static int BaseDay = 7;
     //开学日期
 
@@ -24,7 +24,7 @@ public class BetweenData {
         Calendar NowCa = Calendar.getInstance();
         NowCa.set(year,mouth,day);
         long NowN = NowCa.getTimeInMillis();
-        bd = Math.abs( (BaseN - NowN) / 24 / 3600000 );
+        bd = (NowN - BaseN) / 24 / 3600000 ;
 
         return (int)bd;
     }

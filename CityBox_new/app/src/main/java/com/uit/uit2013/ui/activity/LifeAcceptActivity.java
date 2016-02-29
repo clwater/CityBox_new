@@ -56,6 +56,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/16.
+ * 订单接受
  */
 public class LifeAcceptActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
@@ -68,7 +69,7 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
     public static ProgressDialog pr , apply_pr;
     private String com_name;
     private Activity activity;
-    private Vector<String> unanalysicorder = new Vector<String>();
+    private Vector<String> unanalysicorder = new Vector<String>();          //所有为解析的数据 
     private int selectitem = 0;
     private boolean getindex = true , saveorder = false;
 
@@ -77,23 +78,15 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.life_accept);
 
-
-
-
-
-
         activity = this;
         OrderDateCtrl.createSQL(activity);
 
-
-
-
-        imcreate();
+        imcreate();  //环信登陆
         createtitle();
 
-        createlistview();
+        createlistview();       //设置listview
 
-        getallneworder();
+        getallneworder();       //得到所有的可接受的订单
     }
 
     private void createlistview() {
@@ -158,7 +151,7 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
 
             try {
                 PreferenceTool pt = new PreferenceTool(activity);
-                resultweb_apply = AppleyOrderNetWork.AppleyOrder(com_name,PreferenceTool.getid());
+                resultweb_apply = AppleyOrderNetWork.AppleyOrder(com_name,PreferenceTool.getid());          //抢单
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -169,16 +162,14 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
         protected void onProgressUpdate(Void... progress){}
         protected void onPostExecute(Void result){
             if (resultweb_apply.equals("{\"status\":\"take success\"}")){
-
+                //成功抢单后将数据保存到本地
 
                 saveorder();
                 saveorder = false;
                 getindex = false;
 
                 getallneworder();
-
                 apply_pr.dismiss();
-
 
                 Toast.makeText(activity , "抢单成功,请到历史记录中查看详细信息." , Toast.LENGTH_SHORT).show();
 
@@ -210,15 +201,11 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
         lo.setOrderend("");
         lo.setOrderstatu(LocalOrder.STATU_ACCEPT);
 
-       // Log.d("his_statu_life" , "lo.getOrderstatu()" + lo.getOrderstatu());
-        String newsetOrdermenu = unanalysicorder.get(selectitem).replace('\"' , '@');
+        String newsetOrdermenu = unanalysicorder.get(selectitem).replace('\"' , '@');           //数据库中不允许储存 " 将"替换为@存入
 
-        //Log.d("accept" ,"allorder.getPrice(): "+ allorder.getId() );
         lo.setOrdermenu(newsetOrdermenu);
-       // Log.d("history" , "setOrdermenu:" + lo.getOrdermenu());
         OrderDateCtrl.UpdateRes(activity , lo);
 
-       // Log.d("accept_back " , "save2");
 
 
         //getallneworder();
@@ -253,6 +240,7 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
     }
 
     private BroadcastReceiver cmdMessageReceiver = new BroadcastReceiver() {
+        //环信透出接受
         public void onReceive(Context context, Intent intent) {
             String msgId = intent.getStringExtra("msgid");
             EMMessage message = intent.getParcelableExtra("message");
@@ -266,7 +254,7 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
                 Log.d("accept" , attr);
                 if (attr.equals("new")){
                     Log.d("accept" , aciton);
-                    //adddongcanxinxi("" + aciton);
+                    //新订单
                     getindex = false;
                     getneworder(aciton);
 
@@ -275,6 +263,7 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
                     getindex = false;
 
                     if(saveorder == false) {
+                        //防止抢单后没有保存完成事删除数据
                         getallneworder();
                     }
 
@@ -458,17 +447,19 @@ public class LifeAcceptActivity extends Activity implements View.OnClickListener
     private void setComplexorder(Vector<String> getoldneworder) throws JSONException {
         for (int i = 0 ; i < getoldneworder.size() ; i++){
             AllOrder setComplexorder_allorder = new AllOrder();
-            Log.d("accept" , "id: " +getoldneworder.get(i).toString());
+            Log.d("accept" , "id: " + i  + "     " +getoldneworder.get(i).toString());
+            if (!getoldneworder.get(i).toString().equals("null")) {
 
-            setComplexorder_allorder = OrderAnalysis.orderanalysis(getoldneworder.get(i).toString());
+                setComplexorder_allorder = OrderAnalysis.orderanalysis(getoldneworder.get(i).toString());
 
-            PreferenceTool pt = new PreferenceTool(this);
-            if (!setComplexorder_allorder.getId().equals(PreferenceTool.getid())) {
+                PreferenceTool pt = new PreferenceTool(this);
+                if (!setComplexorder_allorder.getId().equals(PreferenceTool.getid())) {
 
-                unanalysicorder.add(getoldneworder.get(i).toString());
+                    unanalysicorder.add(getoldneworder.get(i).toString());
 
 
-                insertneworder(setComplexorder_allorder);
+                    insertneworder(setComplexorder_allorder);
+                }
             }
         }
         adapter.notifyDataSetChanged();

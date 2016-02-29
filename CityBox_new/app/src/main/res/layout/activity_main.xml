@@ -6,6 +6,10 @@
 
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
     <!-- 上边主页面 -->
 
     <fragment
@@ -34,54 +38,60 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="10" />
+    </LinearLayout>
     <!-- 底部菜单页面 -->
+
+
 
     <LinearLayout
         android:id="@+id/bottomRg"
-        android:paddingTop="2dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#fff"
-        android:layout_weight="0.5"
+        android:background="#CEF4FF"
+
         android:orientation="horizontal" >
 
         <TextView
             android:id="@+id/rbOne"
             style="@style/AppTheme"
-            android:drawableTop="@drawable/ic_schuedle"
-            android:text="课表"
+            android:drawableTop="@drawable/nn_ic_schedule"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:text="课表"
+            android:padding="4dp"
             android:layout_height="fill_parent" />
 
         <TextView
             android:id="@+id/rbTwo"
             style="@style/AppTheme"
-            android:drawableTop="@drawable/ic_life"
-            android:text="生活"
+            android:drawableTop="@drawable/nn_ic_life"
             android:gravity="center"
+            android:text="生活"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:padding="4dp"
             android:layout_height="fill_parent" />
 
         <TextView
             android:id="@+id/rbThree"
             style="@style/AppTheme"
-            android:drawableTop="@drawable/ic_book"
-            android:text="学习"
+            android:drawableTop="@drawable/nn_ic_study"
             android:gravity="center"
             android:layout_width="0dp"
             android:layout_weight="1"
+            android:text="学习"
+            android:padding="4dp"
             android:layout_height="fill_parent" />
 
         <TextView
             android:id="@+id/rbFour"
             style="@style/AppTheme"
-            android:drawableTop="@drawable/ic_settings"
-            android:text="设置"
+            android:drawableTop="@drawable/nn_ic_setting"
             android:gravity="center"
             android:layout_width="0dp"
+            android:text="设置"
+            android:padding="4dp"
             android:layout_weight="1"
             android:layout_height="fill_parent" />
     </LinearLayout>

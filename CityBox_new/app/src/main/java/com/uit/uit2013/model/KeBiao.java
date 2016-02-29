@@ -6,6 +6,7 @@ import java.util.Vector;
 
 /**
  * Created by soul on 2016/1/22.
+ * 课表 详细一个的
  */
 public class  KeBiao{
     private String class_name;

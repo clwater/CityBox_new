@@ -5,11 +5,11 @@ android {
     buildToolsVersion '21.1.2'
 
     defaultConfig {
-        applicationId "uit2013.uit.com.citybox"
+        applicationId "com.uit2012.artemis"
         minSdkVersion 16
         targetSdkVersion 21
-        versionCode 3
-        versionName "3.0"
+        versionCode 52
+        versionName "5.1.0"
     }
     buildTypes {
         release {

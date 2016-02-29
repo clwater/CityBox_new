@@ -7,6 +7,7 @@ import com.uit.uit2013.model.User;
 
 /**
  * Created by yszsyf on 16/2/16.
+ * 本地数据 订单时的个人信息
  */
 public class LocalInformationTool {
     public final static String ADDRESS = "ADDRESS";//其实是密码

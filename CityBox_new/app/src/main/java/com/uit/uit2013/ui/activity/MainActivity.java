@@ -53,15 +53,8 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         final Activity activity = this;
 
-       //FeedbackAgent agent = new FeedbackAgent(this);
-        //agent.startFeedbackActivity();
 
-
-        UmengUpdateAgent.update(this);
-
-
-
-
+        UmengUpdateAgent.update(this);//友盟更新
 
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
@@ -77,7 +70,7 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
                 startActivity(new Intent( this , LoginActivity.class));
          }
 
-       // gestureDetector = new GestureDetector(MainActivity.this,onGestureListener);//滑动监听
+        gestureDetector = new GestureDetector(MainActivity.this,onGestureListener);//滑动监听
 
 
         if ( app_statu) {
@@ -185,7 +178,10 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         rb[2].setOnClickListener(this);
         rb[3].setOnClickListener(this);
 
-        rb[0].setTextColor(Color.parseColor("#6A91FF"));
+        clearf();
+
+        rb[0].setBackgroundColor(Color.parseColor("#CEF4FF"));
+        rb[0].setTextColor(Color.parseColor("#000000"));
     }
     public void onClick(View view) {
         switch (view.getId()){
@@ -214,50 +210,56 @@ public class MainActivity extends FragmentActivity implements View.OnClickListen
         fragmentTransaction = fragmentManager.beginTransaction()
                 .hide(mFragments[0]).hide(mFragments[1])
                 .hide(mFragments[2]).hide(mFragments[3]);
-        rb[0].setTextColor(Color.parseColor("#000000") );
-        rb[1].setTextColor(Color.parseColor("#000000"));
-        rb[2].setTextColor(Color.parseColor("#000000"));
-        rb[3].setTextColor(Color.parseColor("#000000"));
+        rb[0].setBackgroundColor(Color.parseColor("#96D7E9"));
+        rb[1].setBackgroundColor(Color.parseColor("#96D7E9"));
+        rb[2].setBackgroundColor(Color.parseColor("#96D7E9"));
+        rb[3].setBackgroundColor(Color.parseColor("#96D7E9"));
+
+        rb[0].setTextColor(Color.parseColor("#7B8693"));
+        rb[1].setTextColor(Color.parseColor("#7B8693"));
+        rb[2].setTextColor(Color.parseColor("#7B8693"));
+        rb[3].setTextColor(Color.parseColor("#7B8693"));
     }
     public void changef(int i){//更改显示的 fragment
         clearf();
         fragmentTransaction.show(mFragments[i]).commit();
-        rb[i].setTextColor(Color.parseColor("#6A91FF"));
+        rb[i].setBackgroundColor(Color.parseColor("#CEF4FF"));
+        rb[i].setTextColor(Color.parseColor("#000000"));
     }
 
-//    private GestureDetector.OnGestureListener onGestureListener =
-//            new GestureDetector.SimpleOnGestureListener() {
-//                @Override
-//                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
-//                                       float velocityY) {
-//                    float x = e2.getX() - e1.getX();
-//                    float y = e2.getY() - e1.getY();
-//                    if (x > 0) {
-//                        doResult(RIGHT);
-//                    } else if (x < 0) {
-//                        doResult(LEFT);
-//                    }
-//                    return true;
-//                }
-//            };
+    private GestureDetector.OnGestureListener onGestureListener =
+            new GestureDetector.SimpleOnGestureListener() {
+                @Override
+                public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
+                                       float velocityY) {
+                    float x = e2.getX() - e1.getX();
+                    float y = e2.getY() - e1.getY();
+                    if (x > 0) {
+                        doResult(RIGHT);
+                    } else if (x < 0) {
+                        doResult(LEFT);
+                    }
+                    return true;
+                }
+            };
 
 
-//    public boolean onTouchEvent(MotionEvent event) {
-//        return gestureDetector.onTouchEvent(event);
-//    }
-//
-//    public void doResult(int action) {
-//        switch (action) {
-//            case RIGHT:
-//                CHANGE = ( CHANGE + 4 - 1 ) % 4 ;
-//                changef(CHANGE);
-//                break;
-//            case LEFT:
-//                CHANGE = ( CHANGE + 4 + 1 ) % 4 ;
-//                changef(CHANGE);
-//                break;
-//        }
-//    }
+    public boolean onTouchEvent(MotionEvent event) {
+        return gestureDetector.onTouchEvent(event);
+    }
+
+    public void doResult(int action) {
+        switch (action) {
+            case RIGHT:
+                CHANGE = ( CHANGE + 4 - 1 ) % 4 ;
+                changef(CHANGE);
+                break;
+            case LEFT:
+                CHANGE = ( CHANGE + 4 + 1 ) % 4 ;
+                changef(CHANGE);
+                break;
+        }
+    }
 
     public void onResume() {
         super.onResume();

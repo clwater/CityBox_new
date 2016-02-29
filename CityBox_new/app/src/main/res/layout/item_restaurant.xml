@@ -12,7 +12,7 @@
         android:id="@+id/itme_res_title"
         android:gravity="center"
         android:textColor="#062c5e"
-        android:textSize="24dp"
+        android:textSize="16dp"
         android:text="item_res_title"/>
 
     <TextView
@@ -20,7 +20,6 @@
         android:layout_height="match_parent"
         android:id="@+id/itme_res_body"
         android:gravity="right"
-        android:textSize="16dp"
         android:text="item_res_body"
         android:textColor="#7193f1"
         android:paddingRight="20dp"/>

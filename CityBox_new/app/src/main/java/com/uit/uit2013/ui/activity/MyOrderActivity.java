@@ -45,6 +45,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/17.
+ * 历史订单信息
  */
 public class MyOrderActivity extends Activity implements View.OnClickListener, AdapterView.OnItemClickListener {
     private String history_type;
@@ -66,7 +67,7 @@ public class MyOrderActivity extends Activity implements View.OnClickListener, A
         setContentView(R.layout.myorder);
         context = this.getBaseContext();
         activity = this;
-        history_type = gethistorytype();
+        history_type = gethistorytype();        //判断是订餐 还是送餐订单
 
 
         createtitle();

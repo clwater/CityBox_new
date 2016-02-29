@@ -16,6 +16,7 @@ import com.uit.uit2013.ui.activity.ScoreActivity;
 
 /**
  * Created by soul on 2016/1/19.
+ * 学习服务
  */
 public class FragmentStudy extends Fragment implements View.OnClickListener {
     private TextView tv;

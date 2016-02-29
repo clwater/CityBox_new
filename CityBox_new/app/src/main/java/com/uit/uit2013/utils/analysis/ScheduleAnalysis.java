@@ -20,7 +20,7 @@ import org.json.JSONTokener;
 public class ScheduleAnalysis {
 
 
-    static String[] cs = new String[10];
+    static String[] cs = new String[10];        //课表颜色 =-=  可以增加或者修改  记得下方使用的时候做取余操作
     static int index = 0;
     public boolean  getstatu(String rquest) throws JSONException {
         JSONTokener jsonParser = new JSONTokener(rquest);

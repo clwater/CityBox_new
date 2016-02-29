@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/2/16.
+ * 订单详情  什么菜  几个之类的
  */
 public class Order {
     String st, dk, sl, dj, cm;

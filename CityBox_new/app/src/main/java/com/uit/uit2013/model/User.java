@@ -4,6 +4,7 @@ import com.uit.uit2013.utils.PreferenceTool;
 
 /**
  * Created by soul on 2016/1/16.
+ * 用户
  */
 public class User {
 

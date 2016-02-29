@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/appbackground">
 
     <include layout="@layout/title_bar" />
 
@@ -9,7 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="4dp"
         android:padding="4dp"
         >
 
@@ -17,22 +20,18 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:id="@+id/score_spinner"
+            android:layout_gravity="bottom"
+            android:paddingLeft="4dp"
             android:layout_weight="1"></Spinner>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/score_update"
-            android:text="查询课表"
-            android:textColor="#fff"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="5dp"
-            android:layout_gravity="center"
-            android:background="@drawable/button_score_update"
+            android:background="@drawable/button_book_query"
             android:gravity="center"
-            android:textSize="20sp"
+            android:layout_gravity="bottom"
+
             />
     </LinearLayout>
 
@@ -44,8 +43,7 @@
         android:id="@+id/score_listview"
         android:paddingTop="6dp"
         android:dividerHeight="10dip"
-        android:background="#ECECEC"
-        android:divider="#ECECEC"
+        android:divider="#00ececec"
         android:scrollbars="none"
         android:layout_height="fill_parent"/>
 

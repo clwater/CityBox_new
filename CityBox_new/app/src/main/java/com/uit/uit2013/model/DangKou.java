@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/2/13.
+ * 档口
  */
 public class DangKou {
     private  String name , price , dangkouid;

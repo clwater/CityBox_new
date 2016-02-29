@@ -33,6 +33,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/23.
+ * 成绩查询
  */
 public class ScoreActivity  extends Activity implements AdapterView.OnItemSelectedListener, View.OnClickListener {
     private TextView titletv , updatatv;

@@ -22,6 +22,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/17.
+ * 查看历史订单
  */
 public class OrderHistoryDialog extends Dialog implements View.OnClickListener {
 

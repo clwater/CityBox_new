@@ -16,6 +16,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/13.
+ * 档口信息解析
  */
 public class DangKouAnalysis {
     public static Vector<DangKou> AnalysisRes(String result , String id , Context context) throws JSONException {

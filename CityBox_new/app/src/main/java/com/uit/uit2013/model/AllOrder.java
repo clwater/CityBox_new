@@ -5,6 +5,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/16.
+ * 订单
  */
 public class AllOrder {
     String ordernum;

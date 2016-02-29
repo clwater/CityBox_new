@@ -20,6 +20,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/14.
+ * 订单的adapter
  */
 public class OrderingAdapter extends BaseAdapter {
 
@@ -122,7 +123,7 @@ public class OrderingAdapter extends BaseAdapter {
         dk.sub.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(shuliang[position] < 1 ){
+                if(shuliang[position] < 1 ){//判断是否没有选择
                     Toast.makeText(context , "你还没有选择这个菜品" , Toast.LENGTH_SHORT).show();
                 }
                 else {

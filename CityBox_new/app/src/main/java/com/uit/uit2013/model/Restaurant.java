@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/1/30.
+ * 食堂信息
  */
 public class Restaurant {
 

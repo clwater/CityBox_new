@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/2/26.
+ * 图书
  */
 public class Book {
     //String name , author , press , date , location , call;

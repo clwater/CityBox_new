@@ -16,6 +16,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/25.
+ * 成绩解析
  */
 public class ScoreAnalysis {
     public static Vector<Score> AnalysisScore(String result)  {

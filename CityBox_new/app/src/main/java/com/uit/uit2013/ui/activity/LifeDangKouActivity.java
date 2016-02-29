@@ -39,6 +39,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/13.
+ * 档口信息
  */
 public class LifeDangKouActivity  extends Activity implements View.OnClickListener {
 
@@ -68,6 +69,7 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
 
         lifedangkouactivity = this;
         Intent intent = getIntent();
+        //通过intent活的相关档口信息
         dangkouid_s  = intent.getStringExtra("dangkouid");
         dangkouid = Integer.valueOf(dangkouid_s);
         dangkouid++;
@@ -101,14 +103,9 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
         }catch (Exception exceptione){}
 
         data = getData();
-//        adapter = new SimpleAdapter(this,data,R.layout.item_dangkou,
-//                new String[]{"name","price","sub","number","add"},
-//                new int[]{R.id.itme_dk_name,R.id.itme_dk_price , R.id.item_dk_sub , R.id.item_dk_number , R.id.item_dk_add});
-
         OrderingAdapter myadapter = new OrderingAdapter(getBaseContext() , data);
 
         life_dangkou_listview.setAdapter(myadapter);
-        //life_res_listview.setOnItemClickListener(this);
     }
 
     private List<Map<String, Object>> getData() {
@@ -198,6 +195,7 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
 
 
     public static void changeorde(){
+        //计算订单总价
         all = 0 ;
 
         for (int i = 0 ; i < order.size() ; i++){

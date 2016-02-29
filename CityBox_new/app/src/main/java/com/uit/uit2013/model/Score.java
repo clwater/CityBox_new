@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/2/25.
+ * 成绩
  */
 public class Score {
 

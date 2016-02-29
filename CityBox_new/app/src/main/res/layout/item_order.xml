@@ -33,7 +33,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:text="位置"
                 android:id="@+id/item_order_location"
                 />
@@ -41,7 +41,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:text="总价"
                 android:id="@+id/item_order_allprice"
                 />
@@ -58,7 +58,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="5"
-                android:textSize="16sp"
                 android:text="地址"
                 android:layout_gravity="center"
                 android:gravity="left"
@@ -70,8 +69,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_weight="3"
-
-                android:textSize="16sp"
                 android:text="打赏"
                 android:id="@+id/item_order_rewark"
                 />

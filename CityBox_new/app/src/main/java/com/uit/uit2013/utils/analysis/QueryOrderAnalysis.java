@@ -13,6 +13,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/19.
+ * 查询订单状态时的解析
  */
 public class QueryOrderAnalysis  {
     public static LocalOrder QueryOrder(String result) throws JSONException {

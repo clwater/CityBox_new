@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@color/citybox_blue"
     android:gravity="center"
+    android:minHeight="50dp"
     android:orientation="horizontal" >
 
     <TextView
@@ -14,9 +15,11 @@
         android:layout_weight="5"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
+        android:gravity="left"
+        android:paddingLeft="30dp"
+        android:text="title"
         android:textColor="#ffffff"
-        android:textSize="25sp" />
+        android:textSize="24sp" />
 
     <TextView
         android:id="@+id/updatatv"

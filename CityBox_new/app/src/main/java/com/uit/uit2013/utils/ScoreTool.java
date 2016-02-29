@@ -7,6 +7,7 @@ import com.uit.uit2013.model.User;
 
 /**
  * Created by yszsyf on 16/2/25.
+ * 成绩储存工具
  */
 public class ScoreTool {
     

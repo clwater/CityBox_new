@@ -26,6 +26,7 @@ import java.util.Vector;
 
 /**
  * Created by yszsyf on 16/2/15.
+ * 确认订单
  */
 public class SetTlementActivity extends Activity implements View.OnClickListener {
 
@@ -43,7 +44,6 @@ public class SetTlementActivity extends Activity implements View.OnClickListener
 
     public static ProgressDialog pr;
 
-//    private String ADDRESS = " address", PHONE , REMARKS , REWARD;
 
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -246,6 +246,7 @@ public class SetTlementActivity extends Activity implements View.OnClickListener
     }
 
     private String getordermenu(String ordernum) {
+        //将数据转换为json格式
         String getordermenu_menu = "";
         getordermenu_menu +="{" +
                 "\"ordernum\":\""+ ordernum +"\",\n" +

@@ -2,6 +2,7 @@ package com.uit.uit2013.model;
 
 /**
  * Created by yszsyf on 16/2/17.
+ * 本地订单  用于和数据库进行交互
  */
 public class LocalOrder {
     public static String TYPE_ORDER = "order" ;

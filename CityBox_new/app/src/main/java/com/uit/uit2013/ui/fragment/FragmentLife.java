@@ -32,6 +32,7 @@ import java.util.List;
 
 /**
  * Created by soul on 2016/1/19.
+ * 生活服务
  */
 public class FragmentLife extends Fragment implements View.OnClickListener {
     private TextView tv , life_restaurant , life_accept ,updatatv;

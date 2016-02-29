@@ -28,12 +28,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <meta-data android:value="5698d64167e58ef640000085" android:name="UMENG_APPKEY"></meta-data>
+        <meta-data android:value="540852fefd98c5103d0052a6" android:name="UMENG_APPKEY"></meta-data>
         <meta-data android:value="Channel ID" android:name="UMENG_CHANNEL"/>
         <service
             android:name="com.umeng.update.net.DownloadingService"
