@@ -197,7 +197,7 @@ public class ScheduleWidgetProvider extends AppWidgetProvider{
             now_week = BetweenData.getWeekNumber(getData_year , getData_mouth + 1 ,getData_day);    //获取周数
             if (now_week < 0){
                 Toast.makeText(context , "现在还没有开学,默认显示第一周的课表." , Toast.LENGTH_LONG).show();
-                now_week = 0 ;
+                now_week = 1 ;
             }
 
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.schedule_widget_layout);
@@ -228,7 +228,7 @@ public class ScheduleWidgetProvider extends AppWidgetProvider{
                 rv.setTextViewText(week[0][0] , "1121");
                 rv.setImageViewResource(weekback[0][0], R.drawable.testb);
 
-                rv.setTextViewText(R.id.weight_week , "第" + ( now_week + 1 ) + "周" );
+                rv.setTextViewText(R.id.weight_week , "第" + now_week + "周" );
 
                 for (int i = 0 ; i < 7 ; i++){
                     for (int j = 0 ; j < 4 ; j++){
@@ -340,7 +340,7 @@ public class ScheduleWidgetProvider extends AppWidgetProvider{
     }
 
     private int getcolor(String colors) {
-        String[] s = { "#67A9BF" , "#8CCBB8" ,"#D5EAE1" ,"#A5D6D3" ,"#47BBE0" ,"#67A9BF" ,"#9DBDE3" ,"#CBE8FA" ,"#7DC8DB" ,"#43A6DD" };
+        String[] s = { "#D7E1DC" , "#EBE5DE" ,"#EBD3CD" ,"#DCE0E5" ,"#E8D599" ,"#E7DADF" ,"#D1C9DB" ,"#CCE0E5" ,"#C9DDAA" ,"#EBCACA" };
         for (int i = 0 ; i < 10 ; i ++){
             if (colors.equals(s[i])){
                 return i;

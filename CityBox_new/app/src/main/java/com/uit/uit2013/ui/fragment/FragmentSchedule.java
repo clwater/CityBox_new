@@ -106,7 +106,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
             if (loginpd == true) {
                 Toast.makeText(activity, "现在还没有开学,默认显示第一周的课表.", Toast.LENGTH_SHORT).show();
             }
-            ScheduleDateCtrl.delete(activity);
+            //ScheduleDateCtrl.delete(activity);
             now_week = 0 ;
         }
 
@@ -227,6 +227,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
                             try {
                                 pd = sa.getstatu(response);
                                 if (pd){
+                                    ScheduleDateCtrl.delete(activity);
                                     ScheduleAnalysis.AnalysisSchedule(response ,context);
                                     getSchedule();
                                     pr.dismiss();

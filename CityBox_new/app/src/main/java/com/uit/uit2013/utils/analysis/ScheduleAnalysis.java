@@ -124,7 +124,7 @@ public class ScheduleAnalysis {
     }
 
     public static String[] inscolor(){//课表颜色信息
-        String[] s = { "#67A9BF" , "#8CCBB8" ,"#D5EAE1" ,"#A5D6D3" ,"#47BBE0" ,"#67A9BF" ,"#9DBDE3" ,"#CBE8FA" ,"#7DC8DB" ,"#43A6DD" };
+        String[] s = { "#D7E1DC" , "#EBE5DE" ,"#EBD3CD" ,"#DCE0E5" ,"#E8D599" ,"#E7DADF" ,"#D1C9DB" ,"#CCE0E5" ,"#C9DDAA" ,"#EBCACA" };
         return s;
     }
 }
