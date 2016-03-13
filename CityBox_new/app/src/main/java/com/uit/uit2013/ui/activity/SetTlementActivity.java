@@ -41,6 +41,7 @@ public class SetTlementActivity extends Activity implements View.OnClickListener
     public static double allprice = 0 ;
     private String psostresult= "";
     private  String ordernum , ordermenu;
+    private int dashang = 1;
 
     public static ProgressDialog pr;
 
@@ -343,6 +344,8 @@ public class SetTlementActivity extends Activity implements View.OnClickListener
             }else  if (returnname.equals("打赏")){
                 settlement_reward.setText(returntext);
                 int return_reward = Integer.valueOf(returntext);
+                allprice -= dashang;
+                dashang = return_reward;
                 allprice += return_reward;
                 settlement_allprice.setText("" + allprice);
             }else if (returnname.equals("备注")){

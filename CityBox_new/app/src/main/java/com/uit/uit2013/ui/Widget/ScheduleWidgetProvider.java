@@ -199,9 +199,10 @@ public class ScheduleWidgetProvider extends AppWidgetProvider{
                 Toast.makeText(context , "现在还没有开学,默认显示第一周的课表." , Toast.LENGTH_LONG).show();
                 now_week = 1 ;
             }
+            now_week++;
 
             RemoteViews rv = new RemoteViews(context.getPackageName(), R.layout.schedule_widget_layout);
-            rv.setTextViewText(R.id.weight_week , "第" + ( now_week + 1 ) + "周" );
+            rv.setTextViewText(R.id.weight_week , "第" + 1 + "周" );
 
             Intent next=new Intent(broadCastString_next);
             PendingIntent pendingnext= PendingIntent.getBroadcast(context, 0, next, 0);
