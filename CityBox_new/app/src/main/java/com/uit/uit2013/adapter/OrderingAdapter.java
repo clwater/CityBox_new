@@ -31,6 +31,8 @@ public class OrderingAdapter extends BaseAdapter {
     private Zujian dk = new Zujian();
     private Vector<TextView> vb = new Vector<TextView>();
 
+
+
     class Order{
         String name;
         String price;
@@ -91,8 +93,10 @@ public class OrderingAdapter extends BaseAdapter {
         final int selectID = position;
         if (convertView == null) {
 
+            dk  = new  Zujian();
             //获得组件，实例化组件
             convertView = layoutInflater.inflate(R.layout.item_dangkou, null);
+
             dk.name = (TextView) convertView.findViewById(R.id.itme_dk_name);
             dk.price = (TextView) convertView.findViewById(R.id.itme_dk_price);
             dk.sub = (Button) convertView.findViewById(R.id.item_dk_sub);

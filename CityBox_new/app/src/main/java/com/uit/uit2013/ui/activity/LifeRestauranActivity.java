@@ -5,6 +5,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.AdapterView;
@@ -16,6 +17,7 @@ import com.twotoasters.jazzylistview.effects.HelixEffect;
 import com.uit.uit2013.R;
 import com.uit.uit2013.model.LocalOrder;
 import com.uit.uit2013.model.Restaurant;
+import com.uit.uit2013.utils.db.DKDateCtrl;
 import com.uit.uit2013.utils.db.ResDateCtrl;
 import com.uit.uit2013.utils.network.RestaurantNetWork;
 
@@ -57,6 +59,9 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
 
        try {
            res = ResDateCtrl.QueryRes(this);        //读取本地信息
+           if (res.size() <= 0 ){
+               updata();
+           }
        }catch (Exception exceptione){}
 
         data = getData();
@@ -73,7 +78,8 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
         for (int i=0 ; i<res.size() ; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
              map.put("title", ""+res.get(i).getName().toString());
-              map.put("body", "" + res.get(i).getLocation().toString() + res.get(i).getFloor().toString());
+             map.put("body", "" + res.get(i).getLocation().toString() + res.get(i).getFloor().toString());
+            //Log.d("what" , " " + res.get(i).getName().toString()   + "    " + res.get(i).getId().toString());
             list.add(map);
         }
         return list;
@@ -110,6 +116,7 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
 
     private void updata()  {
         pr = ProgressDialog.show(LifeRestauranActivity.this, null, "获取食堂数据中......");
+        DKDateCtrl.clear(this);
         ResDateCtrl.delete(this);
         CountingTask task=new CountingTask();
         task.execute();
@@ -137,6 +144,8 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
         String danghouid = String.valueOf(arg2);
         Intent next = new Intent();
         next.putExtra("dangkouid" , ""+danghouid);
+
+        Log.d("what" , " danghouid" +danghouid );
         next.putExtra("dangkouname" , "" + res.get(arg2).getName());
         next.putExtra("dangkoulocation", "" + res.get(arg2).getLocation());
         next.setClass(this,LifeDangKouActivity.class);

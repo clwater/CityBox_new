@@ -122,6 +122,15 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
 
     private void getSchedule() {
         schedule = Schedule.getins(context);
+
+
+        PreferenceTool pt = new PreferenceTool(activity);
+
+        boolean login_statu = pt.getloginstatu();        //判断是否登陆
+
+        if( (schedule.size() <=0)  && (login_statu)){
+            updaataSchedule();
+        }
         drawSchedule();//绘制课表
 
     }
@@ -206,7 +215,7 @@ public class FragmentSchedule extends Fragment implements View.OnClickListener {
     }
 
     private void updaataSchedule() {//更新课表
-        pr = ProgressDialog.show(activity, null, "更新数据中......");
+        pr = ProgressDialog.show(activity, null, "更新课表中");
         mQueue = Volley.newRequestQueue(activity);
         CountingTask task=new CountingTask();
         task.execute();

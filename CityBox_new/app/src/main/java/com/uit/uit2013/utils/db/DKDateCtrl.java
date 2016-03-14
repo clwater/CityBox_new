@@ -73,4 +73,10 @@ public class DKDateCtrl {
         String sql="DELETE FROM dangkou where dangkouid = " + id ;
         db.execSQL(sql);
     }
+
+    public static void clear(Context context){
+        createSQL(context);
+        String sql="DELETE FROM dangkou";
+        db.execSQL(sql);
+    }
 }

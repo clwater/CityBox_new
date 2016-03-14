@@ -96,10 +96,14 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
 
     private void createlist() {
         life_dangkou_listview = (JazzyListView)findViewById(R.id.life_dangkou_listview);
-        life_dangkou_listview.setTransitionEffect( new HelixEffect());
+        //life_dangkou_listview.setTransitionEffect( new HelixEffect());
 
         try {
             dangkou = DKDateCtrl.QueryRes(this ,dangkouid_s);
+            if(dangkou.size()  <= 0 ){
+                updata();
+            }
+
         }catch (Exception exceptione){}
 
         data = getData();
@@ -110,6 +114,11 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
 
     private List<Map<String, Object>> getData() {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+
+        if (dangkou.size() < 0){
+            updata();
+        }
+
         for (int i=0 ; i<dangkou.size() ; i++) {
             Map<String, Object> map = new HashMap<String, Object>();
             map.put("name", ""+dangkou.get(i).getName().toString());
@@ -117,6 +126,7 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
             map.put("sub","-");
             map.put("number","0");
             map.put("add","+");
+          //  Log.d("what" , " " + dangkou.get(i).getName().toString()   + "    " + i);
             list.add(map);
         }
         return list;
