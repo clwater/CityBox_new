@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="/Users/yszsyf/github/CityBox_new/CityBox_new/library-recyclerview/src/main/assets"/></dataSet><dataSet config="debug"><source path="/Users/yszsyf/github/CityBox_new/CityBox_new/library-recyclerview/src/debug/assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="/Users/yszsyf/github/CityBox_new/CityBox_new/library-recyclerview/src/main/assets"/><source path="/Users/yszsyf/github/CityBox_new/CityBox_new/library-recyclerview/build/generated/assets/shaders/debug"/></dataSet><dataSet config="debug"><source path="/Users/yszsyf/github/CityBox_new/CityBox_new/library-recyclerview/src/debug/assets"/></dataSet></merger>
