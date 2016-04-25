@@ -41,21 +41,20 @@ import java.util.Vector;
  * Created by yszsyf on 16/2/13.
  * 档口信息
  */
-public class LifeDangKouActivity  extends Activity implements View.OnClickListener {
+public class LifeDangKouActivity extends Activity implements View.OnClickListener {
 
-    private  String dangkouid_s ,dangkouname , dangkoulocation;
+    private String dangkouid_s, dangkouname, dangkoulocation;
     private int dangkouid;
-    private TextView life_title , back , life_updata , life_history  , settlement;
+    private TextView life_title, back, life_updata, life_history, settlement;
     public static TextView allprice;
     public static ProgressDialog pr;
     private List<Map<String, Object>> data;
     private Vector<DangKou> dangkou = new Vector<DangKou>();
-    public static  Vector<SimpleOrder> order = new Vector<SimpleOrder>();
-    public static double all = 0 ;
-    public static int select = 0 ;
+    public static Vector<SimpleOrder> order = new Vector<SimpleOrder>();
+    public static double all = 0;
+    public static int select = 0;
     private JazzyListView life_dangkou_listview;
     public static Activity lifedangkouactivity;
-
 
 
     private SimpleAdapter adapter;
@@ -70,7 +69,7 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
         lifedangkouactivity = this;
         Intent intent = getIntent();
         //通过intent活的相关档口信息
-        dangkouid_s  = intent.getStringExtra("dangkouid");
+        dangkouid_s = intent.getStringExtra("dangkouid");
         dangkouid = Integer.valueOf(dangkouid_s);
         dangkouid++;
         dangkouid_s = String.valueOf(dangkouid);
@@ -89,25 +88,26 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
 
     }
 
-    protected void onDestory(){
+    protected void onDestory() {
         super.onDestroy();
-        all = 0 ;
+        all = 0;
     }
 
     private void createlist() {
-        life_dangkou_listview = (JazzyListView)findViewById(R.id.life_dangkou_listview);
+        life_dangkou_listview = (JazzyListView) findViewById(R.id.life_dangkou_listview);
         //life_dangkou_listview.setTransitionEffect( new HelixEffect());
 
         try {
-            dangkou = DKDateCtrl.QueryRes(this ,dangkouid_s);
-            if(dangkou.size()  <= 0 ){
+            dangkou = DKDateCtrl.QueryRes(this, dangkouid_s);
+            if (dangkou.size() <= 0) {
                 updata();
             }
 
-        }catch (Exception exceptione){}
+        } catch (Exception exceptione) {
+        }
 
         data = getData();
-        OrderingAdapter myadapter = new OrderingAdapter(getBaseContext() , data);
+        OrderingAdapter myadapter = new OrderingAdapter(getBaseContext(), data);
 
         life_dangkou_listview.setAdapter(myadapter);
     }
@@ -115,18 +115,18 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
     private List<Map<String, Object>> getData() {
         List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-        if (dangkou.size() < 0){
+        if (dangkou.size() < 0) {
             updata();
         }
 
-        for (int i=0 ; i<dangkou.size() ; i++) {
+        for (int i = 0; i < dangkou.size(); i++) {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("name", ""+dangkou.get(i).getName().toString());
+            map.put("name", "" + dangkou.get(i).getName().toString());
             map.put("price", "" + dangkou.get(i).getPrice().toString());
-            map.put("sub","-");
-            map.put("number","0");
-            map.put("add","+");
-          //  Log.d("what" , " " + dangkou.get(i).getName().toString()   + "    " + i);
+            map.put("sub", "-");
+            map.put("number", "0");
+            map.put("add", "+");
+            //  Log.d("what" , " " + dangkou.get(i).getName().toString()   + "    " + i);
             list.add(map);
         }
         return list;
@@ -142,19 +142,19 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
         life_history = (TextView) findViewById(R.id.life_history);
         //life_history.setOnClickListener(this);
         life_history.setText("");
-        allprice = (TextView)findViewById(R.id.allprice);
-        settlement = (TextView)findViewById(R.id.settlement);
+        allprice = (TextView) findViewById(R.id.allprice);
+        settlement = (TextView) findViewById(R.id.settlement);
         settlement.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.life_back:
                 this.finish();
                 break;
             //case R.id.life_history:
-             //   break;
+            //   break;
             case R.id.life_updata:
                 updata();
                 break;
@@ -165,61 +165,64 @@ public class LifeDangKouActivity  extends Activity implements View.OnClickListen
     }
 
     private void enternext() {
-        if (all > 0 ) {
+        if (all > 0) {
             Intent settlement_ok = new Intent();
             settlement_ok.putExtra("dangkouname", "" + dangkouname);
-            settlement_ok.putExtra("dangkoulocation" , ""+dangkoulocation);
+            settlement_ok.putExtra("dangkoulocation", "" + dangkoulocation);
             settlement_ok.setClass(this, SetTlementActivity.class);
             startActivity(settlement_ok);
-        }else {
-            Toast.makeText(this , "你还没有选择任何菜品" , Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "你还没有选择任何菜品", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void updata()  {
+    private void updata() {
         pr = ProgressDialog.show(LifeDangKouActivity.this, null, "获取食堂数据中......");
-        DKDateCtrl.delete(this , dangkouid_s);
-        CountingTask task=new CountingTask();
+        DKDateCtrl.delete(this, dangkouid_s);
+        CountingTask task = new CountingTask();
         task.execute();
     }
+
     private class CountingTask extends AsyncTask<Void, Void, Void> {
         protected Void doInBackground(Void... params) {
 
             try {
                 DangKouNetWork.getDangKou(getApplicationContext(), dangkouid_s);
-            } catch (JSONException e) {}
+            } catch (JSONException e) {
+            }
             return null;
         }
-        protected void onProgressUpdate(Void... progress){}
-        protected void onPostExecute(Void result){
+
+        protected void onProgressUpdate(Void... progress) {
+        }
+
+        protected void onPostExecute(Void result) {
             getdateforwebsuccess();
         }
     }
-    private  void getdateforwebsuccess(){
+
+    private void getdateforwebsuccess() {
         pr.dismiss();
-        dangkou = DKDateCtrl.QueryRes(this , dangkouid_s);
+        dangkou = DKDateCtrl.QueryRes(this, dangkouid_s);
 
         createlist();
 
     }
 
 
-    public static void changeorde(){
+    public static void changeorde() {
         //计算订单总价
-        all = 0 ;
+        all = 0;
 
-        for (int i = 0 ; i < order.size() ; i++){
+        for (int i = 0; i < order.size(); i++) {
 
-            double pr = Double.valueOf( order.get(i).getPrice().substring(0 ,order.get(i).getPrice().length() -1 ));
+            double pr = Double.valueOf(order.get(i).getPrice().substring(0, order.get(i).getPrice().length() - 1));
             int nu = order.get(i).getNumber();
-            all += ( pr * nu );
+            all += (pr * nu);
         }
 
-        allprice.setText(""+all+"  元");
+        allprice.setText("" + all + "  元");
     }
-
-
-
 
 
 }

@@ -3,86 +3,83 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/appbackground"
-    android:orientation="vertical" >
+    android:orientation="vertical">
+
     <include
         android:id="@+id/one_title"
         layout="@layout/title_bar" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
+            android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:background="#000000"
-            android:id="@+id/top"
-            >
+            android:orientation="horizontal">
+
             <TextView
-                android:paddingLeft="2dp"
-                android:layout_width="0dp"
-                android:layout_weight="0.6"
-                android:layout_height="fill_parent"
                 android:id="@+id/return_this_day"
+                android:layout_width="0dp"
+                android:layout_height="fill_parent"
+                android:layout_weight="0.6"
+                android:gravity="center"
+                android:paddingLeft="2dp"
                 android:text="回到\n本周"
                 android:textColor="#fff"
-                android:textSize="16dp"
-                android:gravity="center"
-                />
+                android:textSize="16dp" />
 
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
                 android:layout_height="fill_parent"
+                android:layout_weight="0.6"
+                android:gravity="right|center_vertical"
                 android:text="当前 "
                 android:textColor="#fff"
-                android:textSize="15dp"
-                android:gravity="right|center_vertical"
-                />
+                android:textSize="15dp" />
 
             <TextView
+                android:id="@+id/top_dq"
                 android:layout_width="0dp"
-                android:layout_weight="0.9"
                 android:layout_height="fill_parent"
+                android:layout_weight="0.9"
+                android:gravity="left|center_vertical"
                 android:text="第几周"
                 android:textColor="#39f"
-                android:textSize="20dp"
-                android:id="@+id/top_dq"
-                android:gravity="left|center_vertical"
-                />
+                android:textSize="20dp" />
 
 
             <TextView
                 android:layout_width="0dp"
-                android:layout_weight="0.6"
                 android:layout_height="fill_parent"
+                android:layout_weight="0.6"
+                android:gravity="right|center_vertical"
                 android:text="课表:  "
                 android:textColor="#fff"
-                android:textSize="15dp"
-                android:gravity="right|center_vertical"
-                />
+                android:textSize="15dp" />
+
             <Spinner
+                android:id="@+id/choose"
                 android:layout_width="0dp"
-                android:layout_weight="1"
                 android:layout_height="fill_parent"
 
-                android:id="@+id/choose">
-            </Spinner>
-
-
+                android:layout_weight="1"></Spinner>
 
 
         </LinearLayout>
 
 
         <ScrollView
+            android:id="@+id/v_sc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
             android:fadingEdge="none"
             android:overScrollMode="never"
-            android:id="@+id/v_sc">
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -92,569 +89,592 @@
                 <LinearLayout
                     android:layout_width="30dp"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-
                     android:background="#fff"
-                    >
+
+                    android:orientation="vertical">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="60px"
-                        android:text=""
                         android:background="#EFEAF0"
-                        android:gravity="center"/>
+                        android:gravity="center"
+                        android:text="" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="10px"
-                        android:background="#EFEAF0"/>
+                        android:background="#EFEAF0" />
 
 
                     <TextView
+                        android:id="@+id/bian_0"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/bian_0"
+                        android:background="#EFEAF0"
+                        android:gravity="center"
                         android:text="一"
                         android:textColor="#000"
-                        android:background="#EFEAF0"
-                        android:textSize="15dp"
-                        android:gravity="center"
-                        />
+                        android:textSize="15dp" />
 
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="二"
                         android:id="@+id/bian_1"
-                        android:textColor="#000"
-                        android:background="#EFEAF0"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="三"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="二"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_2"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="四"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="三"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_3"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="五"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="四"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_4"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="六"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="五"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_5"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="七"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="六"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_6"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="八"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="七"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_7"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="九"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="八"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_8"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="十"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="九"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_9"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="十一"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="十"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_10"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
-
-                    <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="十二"
                         android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="十一"
                         android:textColor="#000"
+                        android:textSize="15dp" />
+
+                    <TextView
                         android:id="@+id/bian_11"
-                        android:textSize="15dp"
-                        android:gravity="center"/>
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="#EFEAF0"
+                        android:gravity="center"
+                        android:text="十二"
+                        android:textColor="#000"
+                        android:textSize="15dp" />
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:background="#EFEAF0"
-                        android:layout_height="10px"/>
+                        android:layout_height="10px"
+                        android:background="#EFEAF0" />
 
                 </LinearLayout>
 
 
-
                 <HorizontalScrollView
+                    android:id="@+id/h_sc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scrollbars="none"
                     android:fadingEdge="none"
                     android:overScrollMode="never"
-                    android:id="@+id/h_sc">
+                    android:scrollbars="none">
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        >
+                        android:layout_height="match_parent">
 
                         <LinearLayout
+                            android:id="@+id/day0"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day0">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="60px"
-                                android:background="#EFEAF0"
-                                android:text="周一"
-                                android:textSize="15dp"
                                 android:id="@+id/day0_top1"
-                                android:gravity="center"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="60px"
+                                android:background="#EFEAF0"
+                                android:gravity="center"
+                                android:text="周一"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="10px"
                                 android:id="@+id/day0_top2"
-                                android:background="#34CED9"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="10px"
+                                android:background="#34CED9" />
 
 
                             <TextView
+                                android:id="@+id/day0_0"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:gravity="center"
-                                android:textColor="#000"
-                                android:id="@+id/day0_0"/>
+                                android:textColor="#000" />
 
                             <TextView
+                                android:id="@+id/day0_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day0_1"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day0_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day0_2"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day0_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day0_3"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day0_4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day0_4"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day0_5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day0_5"/>
+                                android:gravity="center" />
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/day1"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day1">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="60px"
-                                android:text="周二"
-                                android:background="#EFEAF0"
                                 android:id="@+id/day1_top1"
-                                android:textSize="15dp"
-                                android:gravity="center"/>
-                            <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="10px"
+                                android:layout_height="60px"
+                                android:background="#EFEAF0"
+                                android:gravity="center"
+                                android:text="周二"
+                                android:textSize="15dp" />
+
+                            <TextView
                                 android:id="@+id/day1_top2"
-                                android:background="#34CED9"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="10px"
+                                android:background="#34CED9" />
 
                             <TextView
+                                android:id="@+id/day1_0"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day1_0" />
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day1_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day1_1" />
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day1_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day1_2" />
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day1_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day1_3"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day1_4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day1_4"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day1_5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day1_5"/>
+                                android:gravity="center" />
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/day2"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day2">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="60px"
-                                android:text="周三"
-                                android:background="#EFEAF0"
-                                android:textSize="15dp"
                                 android:id="@+id/day2_top1"
-                                android:gravity="center"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="60px"
+                                android:background="#EFEAF0"
+                                android:gravity="center"
+                                android:text="周三"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="10px"
                                 android:id="@+id/day2_top2"
-                                android:background="#34CED9"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="10px"
+                                android:background="#34CED9" />
 
 
                             <TextView
+                                android:id="@+id/day2_0"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day2_0"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day2_1"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day2_1"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day2_2"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day2_2"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day2_3"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day2_3"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day2_4"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day2_4"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day2_5"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day2_5"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/day3"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day3">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="60px"
-                                android:text="周四"
-                                android:background="#EFEAF0"
-                                android:textSize="15dp"
                                 android:id="@+id/day3_top1"
-                                android:gravity="center"/>
-                            <TextView
                                 android:layout_width="match_parent"
-                                android:layout_height="10px"
+                                android:layout_height="60px"
+                                android:background="#EFEAF0"
+                                android:gravity="center"
+                                android:text="周四"
+                                android:textSize="15dp" />
+
+                            <TextView
                                 android:id="@+id/day3_top2"
-                                android:background="#34CED9"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="10px"
+                                android:background="#34CED9" />
 
                             <TextView
+                                android:id="@+id/day3_0"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day3_0"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day3_1"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day3_1"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day3_2"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day3_2"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day3_3"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day3_3"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day3_4"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day3_4"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day3_5"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
 
-                                android:gravity="center"
-                                android:id="@+id/day3_5"/>
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/day4"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day4">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="60px"
-                                android:text="周五"
-                                android:background="#EFEAF0"
-                                android:textSize="15dp"
                                 android:id="@+id/day4_top1"
-                                android:gravity="center"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="60px"
+                                android:background="#EFEAF0"
+                                android:gravity="center"
+                                android:text="周五"
+                                android:textSize="15dp" />
 
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="10px"
                                 android:id="@+id/day4_top2"
-                                android:background="#34CED9"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="10px"
+                                android:background="#34CED9" />
 
                             <TextView
+                                android:id="@+id/day4_0"
                                 android:layout_width="match_parent"
+
                                 android:layout_height="wrap_content"
-
-                                android:gravity="center"
-                                android:id="@+id/day4_0"/>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-
-                                android:gravity="center"
-                                android:id="@+id/day4_1"/>
+                                android:gravity="center" />
 
                             <TextView
+                                android:id="@+id/day4_1"
                                 android:layout_width="match_parent"
+
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day4_2"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day4_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day4_3"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day4_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day4_4"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day4_4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day4_5"/>
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/day4_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
                         </LinearLayout>
+
                         <LinearLayout
+                            android:id="@+id/day5"
                             android:layout_width="0dp"
-                            android:layout_weight="1"
                             android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day5">
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
                             <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="60px"
-                                android:text="周六"
-                                android:background="#EFEAF0"
                                 android:id="@+id/day5_top1"
-                                android:textSize="15dp"
-                                android:gravity="center"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="10px"
-                                android:id="@+id/day5_top2"
-                                android:background="#34CED9"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day5_0"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day5_1"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day5_2"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day5_3"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day5_4"/>
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day5_5"/>
-                        </LinearLayout>
-                        <LinearLayout
-                            android:layout_width="0dp"
-                            android:layout_weight="1"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:id="@+id/day6">
-                            <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="60px"
-                                android:text="周日"
-                                android:id="@+id/day6_top1"
                                 android:background="#EFEAF0"
-                                android:textSize="15dp"
-                                android:gravity="center"/>
+                                android:gravity="center"
+                                android:text="周六"
+                                android:textSize="15dp" />
+
                             <TextView
+                                android:id="@+id/day5_top2"
                                 android:layout_width="match_parent"
                                 android:layout_height="10px"
+                                android:background="#34CED9" />
+
+                            <TextView
+                                android:id="@+id/day5_0"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/day5_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/day5_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/day5_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/day5_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
+
+                            <TextView
+                                android:id="@+id/day5_5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/day6"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/day6_top1"
+                                android:layout_width="match_parent"
+                                android:layout_height="60px"
+                                android:background="#EFEAF0"
+                                android:gravity="center"
+                                android:text="周日"
+                                android:textSize="15dp" />
+
+                            <TextView
                                 android:id="@+id/day6_top2"
-                                android:background="#34CED9"/>
+                                android:layout_width="match_parent"
+                                android:layout_height="10px"
+                                android:background="#34CED9" />
+
                             <TextView
+                                android:id="@+id/day6_0"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day6_0"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day6_1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day6_1"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day6_2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day6_2"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day6_3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day6_3"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day6_4"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day6_4"/>
+                                android:gravity="center" />
+
                             <TextView
+                                android:id="@+id/day6_5"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:id="@+id/day6_5"/>
+                                android:gravity="center" />
                         </LinearLayout>
                     </LinearLayout>
                 </HorizontalScrollView>
