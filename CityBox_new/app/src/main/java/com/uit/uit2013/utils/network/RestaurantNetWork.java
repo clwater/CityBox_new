@@ -40,7 +40,7 @@ public class RestaurantNetWork {
                 .penaltyLog().build());
 
         HttpClient httpClient = new DefaultHttpClient();
-        HttpGet httpget = new HttpGet("http://csxyxzs.sinaapp.com/stall_all.php");
+        HttpGet httpget = new HttpGet("http://cityuit.wuxiwei.cn/index.php/Home/Campus/appShitang");
         List<NameValuePair> params  =new ArrayList<NameValuePair>();
 
         try {

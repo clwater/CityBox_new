@@ -73,7 +73,7 @@ public class LoginActivity  extends Activity implements View.OnClickListener {
 private class CountingTask extends AsyncTask<Void, Void, Void> {
     boolean pd = false;
     protected Void doInBackground(Void... params) {
-        StringRequest postRequest = new StringRequest(Request.Method.POST ,  "http://cityuit.sinaapp.com/login.php",
+        StringRequest postRequest = new StringRequest(Request.Method.POST ,  "http://120.27.53.146:5000/api/login",
                 new Response.Listener<String>() {
                     public void onResponse(String response) {
                         request = response;
