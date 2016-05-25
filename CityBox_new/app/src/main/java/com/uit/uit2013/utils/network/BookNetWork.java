@@ -2,6 +2,7 @@ package com.uit.uit2013.utils.network;
 
 import android.content.Context;
 import android.os.StrictMode;
+import android.util.Log;
 
 import com.uit.uit2013.utils.analysis.RestaurantAnalysis;
 
@@ -35,6 +36,7 @@ public class BookNetWork {
         HttpClient httpClient = new DefaultHttpClient();
         //http://cityuit.wuxiwei.cn/index.php/Home/Campus/appLibrary/title/时间简史
         String url = "http://cityuit.wuxiwei.cn/index.php/Home/Campus/appLibrary/title/" + bookname;
+        Log.d("bookbn" , "url" + url);
         HttpGet httpget = new HttpGet(url);
         List<NameValuePair> params  =new ArrayList<NameValuePair>();
 
@@ -43,12 +45,13 @@ public class BookNetWork {
             HttpResponse httpResp = httpClient.execute(httpget);
             if (httpResp.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 result = EntityUtils.toString(httpResp.getEntity(), "UTF-8");
+                Log.d("bookbn" , result);
             }
 
         } catch (IOException e) {}
 
 
-        return "";
-        // return result;
+        //return "";
+        return result;
     }
 }

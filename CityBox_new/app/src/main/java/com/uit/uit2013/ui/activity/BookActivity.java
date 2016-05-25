@@ -110,6 +110,7 @@ public class BookActivity  extends Activity implements View.OnClickListener {
     private void getsuccess(String resultweb) {
         pr.dismiss();
 
+        Log.d("bookbn" , "resultweb  " + resultweb );
         if (resultweb.equals("[]")){
             Toast.makeText(activity , "没有找到相关图书信息.",Toast.LENGTH_SHORT).show();
             resultweb = "{\"books\":[]}";
