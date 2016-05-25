@@ -37,10 +37,13 @@ public class DangKouNetWork {
 
         HttpClient httpClient = new DefaultHttpClient();
 
-        Log.d("=-=" , "id:  " + id);
+        //Log.d("=-=" , "id:  " + id);
 
-        HttpGet httpget = new HttpGet("http://1.csxyxzs.sinaapp.com/stall.php?id=" + id);
+
+        HttpGet httpget = new HttpGet("http://cityuit.wuxiwei.cn/index.php/Home/Campus/appCaidan/id/" + id);
         List<NameValuePair> params  =new ArrayList<NameValuePair>();
+
+
 
 
         try {
@@ -48,6 +51,8 @@ public class DangKouNetWork {
             HttpResponse httpResp = httpClient.execute(httpget);
             if (httpResp.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 result = EntityUtils.toString(httpResp.getEntity(), "UTF-8");
+                Log.d("=-=" , result);
+
                 DangKouAnalysis.AnalysisRes(result,id, context);
             }
 

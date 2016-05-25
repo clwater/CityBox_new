@@ -28,6 +28,8 @@ public class DangKouAnalysis {
 
         int maxcaidan = yy.length();
 
+        Log.d("bn" , "yy" + yy);
+
         for (int i = 0; i < maxcaidan; i++) {
             DangKou d = new DangKou();
             JSONObject temp = yy.getJSONObject(i);
@@ -35,7 +37,6 @@ public class DangKouAnalysis {
             d.setName(temp.getString("name"));
             d.setPrice(temp.getString("price"));
             d.setDangkouid(id);
-
 
             DKDateCtrl.UpdateRes(context , d.getName() , d.getPrice() , d.getDangkouid());
             res.add(d);

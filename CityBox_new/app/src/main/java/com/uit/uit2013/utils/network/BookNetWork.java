@@ -33,7 +33,8 @@ public class BookNetWork {
                 .penaltyLog().build());
 
         HttpClient httpClient = new DefaultHttpClient();
-        String url = "http://csxyxzs.sinaapp.com/library_only.php?book_name=" + bookname;
+        //http://cityuit.wuxiwei.cn/index.php/Home/Campus/appLibrary/title/时间简史
+        String url = "http://cityuit.wuxiwei.cn/index.php/Home/Campus/appLibrary/title/" + bookname;
         HttpGet httpget = new HttpGet(url);
         List<NameValuePair> params  =new ArrayList<NameValuePair>();
 
@@ -47,6 +48,7 @@ public class BookNetWork {
         } catch (IOException e) {}
 
 
-        return result;
+        return "";
+        // return result;
     }
 }

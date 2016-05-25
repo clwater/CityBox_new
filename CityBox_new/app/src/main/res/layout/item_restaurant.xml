@@ -10,7 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/itme_res_title"
-        android:gravity="center"
+        android:gravity="left|center_vertical"
+        android:paddingLeft="4dp"
         android:textColor="#062c5e"
         android:textSize="16dp"
         android:text="item_res_title"/>

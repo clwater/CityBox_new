@@ -41,6 +41,9 @@ public class RestaurantNetWork {
 
         HttpClient httpClient = new DefaultHttpClient();
         HttpGet httpget = new HttpGet("http://cityuit.wuxiwei.cn/index.php/Home/Campus/appShitang");
+
+
+
         List<NameValuePair> params  =new ArrayList<NameValuePair>();
 
         try {
@@ -49,6 +52,9 @@ public class RestaurantNetWork {
             if (httpResp.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
                 result = EntityUtils.toString(httpResp.getEntity(), "UTF-8");
                // ResDateCtrl.delete(context);
+
+                Log.d("newshitang" , result);
+
                 RestaurantAnalysis.AnalysisRes(result, context);
 
 

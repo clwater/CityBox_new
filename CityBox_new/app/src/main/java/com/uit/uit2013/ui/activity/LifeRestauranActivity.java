@@ -38,6 +38,7 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
     String restaurant = null;
     private  List<Map<String, Object>> data;
     Vector<Restaurant> res = new Vector<Restaurant>();
+    private boolean pd = true;
     private JazzyListView life_res_listview;
 
     private SimpleAdapter adapter;
@@ -60,7 +61,10 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
        try {
            res = ResDateCtrl.QueryRes(this);        //读取本地信息
            if (res.size() <= 0 ){
-               updata();
+               if (pd) {
+                   updata();
+                   pd = false;
+               }
            }
        }catch (Exception exceptione){}
 
