@@ -28,7 +28,7 @@ public class DangKouAnalysis {
 
         int maxcaidan = yy.length();
 
-        Log.d("bn" , "yy" + yy);
+        //Log.d("bn" , "yy" + yy);
 
         for (int i = 0; i < maxcaidan; i++) {
             DangKou d = new DangKou();

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -43,9 +44,9 @@ import java.util.Vector;
  */
 public class LifeDangKouActivity extends Activity implements View.OnClickListener {
 
-    private String dangkouid_s, dangkouname, dangkoulocation;
+    private String dangkouid_s, dangkouname, dangkoulocation , phone_number;
     private int dangkouid;
-    private TextView life_title, back, life_updata, life_history, settlement;
+    private TextView life_title, back, life_updata, life_history, settlement , life_dangkou_phone;
     public static TextView allprice;
     public static ProgressDialog pr;
     private List<Map<String, Object>> data;
@@ -55,6 +56,7 @@ public class LifeDangKouActivity extends Activity implements View.OnClickListene
     public static int select = 0;
     private JazzyListView life_dangkou_listview;
     public static Activity lifedangkouactivity;
+
 
 
     private SimpleAdapter adapter;
@@ -75,6 +77,8 @@ public class LifeDangKouActivity extends Activity implements View.OnClickListene
         dangkouid_s = String.valueOf(dangkouid);
         dangkouname = intent.getStringExtra("dangkouname");
         dangkoulocation = intent.getStringExtra("dangkoulocation");
+        phone_number = intent.getStringExtra("phone");
+        phone_number = phone_number.substring(0 , 11);
         createtitle();
         createlist();
 
@@ -145,6 +149,10 @@ public class LifeDangKouActivity extends Activity implements View.OnClickListene
         allprice = (TextView) findViewById(R.id.allprice);
         settlement = (TextView) findViewById(R.id.settlement);
         settlement.setOnClickListener(this);
+
+        life_dangkou_phone = (TextView) findViewById(R.id.life_dangkou_phone);
+        life_dangkou_phone.setText("订餐电话:    " + phone_number);
+        life_dangkou_phone.setOnClickListener(this);
     }
 
     @Override
@@ -161,7 +169,15 @@ public class LifeDangKouActivity extends Activity implements View.OnClickListene
             case R.id.settlement:
                 enternext();
                 break;
+            case R.id.life_dangkou_phone:
+                playphone();
+                break;
         }
+    }
+
+    private void playphone() {
+        Intent intent=new Intent(Intent.ACTION_CALL, Uri.parse("tel:"+phone_number));
+        startActivity(intent);
     }
 
     private void enternext() {

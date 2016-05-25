@@ -152,6 +152,7 @@ public class LifeRestauranActivity extends Activity implements View.OnClickListe
         Log.d("what" , " danghouid" +danghouid );
         next.putExtra("dangkouname" , "" + res.get(arg2).getName());
         next.putExtra("dangkoulocation", "" + res.get(arg2).getLocation());
+        next.putExtra("phone" , "" + res.get(arg2).getTelephone());
         next.setClass(this,LifeDangKouActivity.class);
         startActivity(next);
 

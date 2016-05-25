@@ -47,7 +47,7 @@ public class RestaurantAnalysis {
             for (int i = 0 ; i < st2.length() ; i++){
                 Restaurant r = new Restaurant();
                 JSONObject temp = st2.getJSONObject(i);
-             //   Log.e("bn", "temp" + temp);
+                //Log.e("bn", "temp" + temp);
 
                 r.setId(temp.getString("id").toString());
                 //r.setId(temp.getInt("0").toString());
@@ -55,13 +55,14 @@ public class RestaurantAnalysis {
                 r.setLocation(temp.getString("location").toString());
                 r.setFloor(temp.getString("floor").toString());
                 r.setTelephone(temp.getString("telephone").toString());
+                Log.e("bn", "telephone" + temp.getString("telephone").toString());
                 ResDateCtrl.UpdateRes(context ,r.getId() ,r.getName() ,r.getLocation() ,r.getFloor() ,r.getTelephone());
                 res.add(r);
             }
             for (int i = st2.length() ; i < dangkou_num ; i ++){
                 Restaurant r = new Restaurant();
                 JSONObject temp = st3.getJSONObject(i - st2.length());
-              //  Log.e("bn", "temp333" + temp);
+              // Log.e("bn", "temp333" + temp);
                 r.setId(temp.getString("id").toString());
                 //r.setId(temp.getInt("0").toString());
                 r.setName(temp.getString("name").toString());
