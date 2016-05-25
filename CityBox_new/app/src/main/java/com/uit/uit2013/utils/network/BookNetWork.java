@@ -36,7 +36,7 @@ public class BookNetWork {
         HttpClient httpClient = new DefaultHttpClient();
         //http://cityuit.wuxiwei.cn/index.php/Home/Campus/appLibrary/title/时间简史
         String url = "http://cityuit.wuxiwei.cn/index.php/Home/Campus/appLibrary/title/" + bookname;
-        Log.d("bookbn" , "url" + url);
+       // Log.d("bookbn" , "url" + url);
         HttpGet httpget = new HttpGet(url);
         List<NameValuePair> params  =new ArrayList<NameValuePair>();
 

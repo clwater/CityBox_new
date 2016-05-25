@@ -110,7 +110,7 @@ public class BookActivity  extends Activity implements View.OnClickListener {
     private void getsuccess(String resultweb) {
         pr.dismiss();
 
-        Log.d("bookbn" , "resultweb  " + resultweb );
+        //Log.d("bookbn" , "resultweb  " + resultweb );
         if (resultweb.equals("[]")){
             Toast.makeText(activity , "没有找到相关图书信息.",Toast.LENGTH_SHORT).show();
             resultweb = "{\"books\":[]}";
@@ -119,8 +119,8 @@ public class BookActivity  extends Activity implements View.OnClickListener {
         book_all = BookAnalysis.AnalysisBook(resultweb);            //解析得到的数据
         setbook();
 
-        Log.d("book" , "result: " + resultweb);
-        Log.d("book" , "result.size: " + resultweb.length());
+        //Log.d("bookbn" , "result: " + resultweb);
+        //Log.d("bookbn" , "result.size: " + resultweb.length());
     }
 
     private void setbook() {

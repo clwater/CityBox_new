@@ -26,17 +26,36 @@ public class BookAnalysis {
 
         try {
             jsonObject = (JSONObject) jsonParser.nextValue();
-            JSONArray grade = jsonObject.getJSONArray("books");
+            JSONArray book = jsonObject.getJSONArray("book");
 
-            for (int i = 0 ; i < grade.length() ; i++){
+            Log.d("bookbn" , "book" + book);
+
+            for (int i = 0 ; i < book.length() ; i++){
                 Book r = new Book();
-                JSONObject temp = grade.getJSONObject(i);
-                r.setName(temp.getString("name").toString());
-                r.setAuthor(temp.getString("author").toString());
+                JSONObject temp = book.getJSONObject(i);
+
+
+                Log.d("bookbn" , "temp" + temp);
+
+
+                r.setName(temp.getString("title").toString());
+
+
+                Log.d("bookbn" , "temp.getString(\"title\").toString():  " + temp.getString("title").toString());
+
+                r.setAuthor(temp.getString("auther").toString());
+
+                Log.d("bookbn" , "temp.getString(\"author\").toString(): " + temp.getString("auther").toString());
+
                 r.setPress(temp.getString("press").toString());
-                r.setDate(temp.getString("date").toString());
-                r.setLocation(temp.getString("location").toString());
-                r.setCall(temp.getString("call".toString()));
+                r.setDate(temp.getString("time").toString());
+                r.setLocation(temp.getString("place").toString());
+                r.setCall(temp.getString("search".toString()));
+
+
+
+                //[{"id":"序号","no":"","title":"书名","auther":"作者","press":"出版社","time":"出版时间","search":"藏书编号","place":"藏书位置","state":"图书状态"}]
+
                 res.add(r);
             }
 

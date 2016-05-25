@@ -7,6 +7,9 @@ package com.uit.uit2013.model;
 public class Book {
     //String name , author , press , date , location , call;
     String name , author , press , date , location , call;
+   // String id , no , title , auther , press , time , search , place , state;
+
+    //[{"id":"序号","no":"","title":"书名","auther":"作者","press":"出版社","time":"出版时间","search":"藏书编号","place":"藏书位置","state":"图书状态"}]
 
     public String getName() {
         return name;
