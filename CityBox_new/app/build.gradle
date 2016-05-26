@@ -8,8 +8,8 @@ android {
         applicationId "com.uit2012.artemis"
         minSdkVersion 16
         targetSdkVersion 21
-        versionCode 61
-        versionName "5.2"
+        versionCode 62
+        versionName "5.2.1"
     }
     buildTypes {
         release {
