@@ -24,6 +24,7 @@ public class DangKouAnalysis {
 
         JSONTokener jsonParser = new JSONTokener(result);
         JSONObject jsonObject = (JSONObject) jsonParser.nextValue();
+
         JSONArray yy = jsonObject.getJSONArray("data");
 
         int maxcaidan = yy.length();
