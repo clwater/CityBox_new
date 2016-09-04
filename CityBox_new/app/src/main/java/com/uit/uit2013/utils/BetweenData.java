@@ -11,8 +11,8 @@ import java.util.Date;
  */
 public class BetweenData {
     public static int BaseYear = 2016;
-    public static int BaseMouth = 3;
-    public static int BaseDay = 7;
+    public static int BaseMouth = 9;
+    public static int BaseDay = 5;
     //开学日期
 
     public static  long getBetweenDate(int year , int mouth , int day){

@@ -76,10 +76,6 @@
 
 
 
-
-
-
-
         <activity
             android:name=".ui.activity.LoginActivity"
             android:label="login" />

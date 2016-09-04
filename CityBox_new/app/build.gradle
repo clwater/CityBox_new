@@ -1,15 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
+    compileSdkVersion 24
     buildToolsVersion '21.1.2'
 
     defaultConfig {
         applicationId "com.uit2012.artemis"
         minSdkVersion 16
         targetSdkVersion 21
-        versionCode 62
-        versionName "5.2.1"
+        versionCode 63
+        versionName "5.3.1"
     }
     buildTypes {
         release {
@@ -27,4 +27,6 @@ dependencies {
     compile project(':library')
     compile files('libs/easemobchat_2.2.5.jar')
     compile files('libs/umeng-update-v2.6.0.1.jar')
+    compile files('libs/httpclient-4.2.5.jar')
+    compile files('libs/httpclient-cache-4.2.5.jar')
 }
