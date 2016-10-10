@@ -219,7 +219,7 @@ public class ScoreActivity  extends Activity implements AdapterView.OnItemSelect
             }
         }
         between++;
-        choosedate = new String[between];
+        choosedate = new String[between + 1];
 
         Log.d("score" , "between" + between);
 
